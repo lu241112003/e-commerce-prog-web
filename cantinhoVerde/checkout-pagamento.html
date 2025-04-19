@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Pagamento | Plantas Marketplace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/checkout-pagamento.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Planta<span>Shop</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="conta.html"><i class="fas fa-user"></i></a>
+          <a href="pesquisa.html"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+      <div class="container">
+        <div class="progress-steps">
+          <div class="progress-step completed">
+            <div class="step-number">1</div>
+            <div class="step-label">Carrinho</div>
+          </div>
+          <div class="progress-step completed">
+            <div class="step-number">2</div>
+            <div class="step-label">Endereço</div>
+          </div>
+          <div class="progress-step active">
+            <div class="step-number">3</div>
+            <div class="step-label">Pagamento</div>
+          </div>
+          <div class="progress-step">
+            <div class="step-number">4</div>
+            <div class="step-label">Confirmação</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkout Content -->
+    <section class="checkout-content">
+      <div class="container">
+        <div class="checkout-container">
+          <!-- Checkout Form -->
+          <div class="checkout-form">
+            <h2 class="checkout-title">Método de Pagamento</h2>
+
+            <div class="payment-methods">
+              <div class="payment-method-tabs">
+                <button class="payment-tab active" data-method="credit-card">
+                  <i class="fas fa-credit-card"></i> Cartão de Crédito
+                </button>
+                <button class="payment-tab" data-method="boleto">
+                  <i class="fas fa-barcode"></i> Boleto Bancário
+                </button>
+                <button class="payment-tab" data-method="pix">
+                  <i class="fas fa-qrcode"></i> PIX
+                </button>
+              </div>
+
+              <div class="payment-method-content">
+                <!-- Credit Card Form -->
+                <div class="payment-method-panel active" id="credit-card">
+                  <div class="credit-card-container">
+                    <div class="credit-card-preview">
+                      <div class="card-front">
+                        <div class="card-type">
+                          <i class="fab fa-cc-visa"></i>
+                        </div>
+                        <div class="card-number">•••• •••• •••• ••••</div>
+                        <div class="card-info">
+                          <div class="card-holder">
+                            <div class="label">Titular do Cartão</div>
+                            <div class="value">Nome do Titular</div>
+                          </div>
+                          <div class="card-expiry">
+                            <div class="label">Validade</div>
+                            <div class="value">MM/AA</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-back">
+                        <div class="card-stripe"></div>
+                        <div class="card-cvv">
+                          <div class="cvv-label">CVV</div>
+                          <div class="cvv-value">•••</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <form class="credit-card-form">
+                      <div class="form-group">
+                        <label for="cardNumber">Número do Cartão</label>
+                        <div class="input-icon">
+                          <input
+                            type="text"
+                            id="cardNumber"
+                            placeholder="0000 0000 0000 0000"
+                            maxlength="19"
+                          />
+                          <div class="card-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-elo"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="cardHolder">Nome do Titular</label>
+                        <input
+                          type="text"
+                          id="cardHolder"
+                          placeholder="Como está impresso no cartão"
+                        />
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="cardExpiry">Validade</label>
+                          <input
+                            type="text"
+                            id="cardExpiry"
+                            placeholder="MM/AA"
+                            maxlength="5"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="cardCvv">CVV</label>
+                          <input
+                            type="text"
+                            id="cardCvv"
+                            placeholder="000"
+                            maxlength="4"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="installments">Parcelas</label>
+                        <select id="installments">
+                          <option value="1">1x de R$169,80 sem juros</option>
+                          <option value="2">2x de R$84,90 sem juros</option>
+                          <option value="3">3x de R$56,60 sem juros</option>
+                          <option value="4">4x de R$42,45 sem juros</option>
+                          <option value="5">5x de R$33,96 sem juros</option>
+                          <option value="6">6x de R$28,30 sem juros</option>
+                        </select>
+                      </div>
+                      <div class="form-group save-card">
+                        <label class="checkbox-label">
+                          <input type="checkbox" id="saveCard" />
+                          <span class="checkbox-custom"></span>
+                          Salvar cartão para compras futuras
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Boleto Form -->
+                <div class="payment-method-panel" id="boleto">
+                  <div class="boleto-info">
+                    <div class="boleto-icon">
+                      <i class="fas fa-barcode"></i>
+                    </div>
+                    <div class="boleto-details">
+                      <h3>Pagamento via Boleto Bancário</h3>
+                      <ul>
+                        <li>
+                          O boleto será gerado após a finalização do pedido.
+                        </li>
+                        <li>
+                          O prazo de validade do boleto é de 3 dias úteis.
+                        </li>
+                        <li>
+                          Após o pagamento, o pedido será processado em até 2
+                          dias úteis.
+                        </li>
+                        <li>
+                          Não é necessário enviar o comprovante de pagamento.
+                        </li>
+                      </ul>
+                      <div class="boleto-discount">
+                        <i class="fas fa-tag"></i> 5% de desconto para pagamento
+                        via boleto: <strong>R$161,31</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boleto-cpf">
+                    <div class="form-group">
+                      <label for="cpf">CPF/CNPJ para o boleto</label>
+                      <input
+                        type="text"
+                        id="cpf"
+                        placeholder="000.000.000-00"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PIX Form -->
+                <div class="payment-method-panel" id="pix">
+                  <div class="pix-info">
+                    <div class="pix-icon">
+                      <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="pix-details">
+                      <h3>Pagamento via PIX</h3>
+                      <ul>
+                        <li>
+                          O QR Code e o código PIX serão gerados após a
+                          finalização do pedido.
+                        </li>
+                        <li>O pagamento é processado instantaneamente.</li>
+                        <li>
+                          Após a confirmação do pagamento, seu pedido será
+                          processado.
+                        </li>
+                        <li>O código PIX tem validade de 30 minutos.</li>
+                      </ul>
+                      <div class="pix-discount">
+                        <i class="fas fa-tag"></i> 10% de desconto para
+                        pagamento via PIX: <strong>R$152,82</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-actions">
+              <a href="checkout-endereco.html" class="btn-back"
+                >Voltar para Endereço</a
+              >
+              <a href="confirmacao.html" class="btn-continue">
+                Finalizar Pedido
+              </a>
+              <!-- <button type="button" class="btn-continue">
+                Finalizar Pedido
+              </button> -->
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h3 class="summary-title">Resumo do Pedido</h3>
+
+            <div class="summary-items">
+              <div class="summary-item">
+                <div class="item-image">
+                  <img src="images/products/planta1.jpg" alt="Zamioculca" />
+                </div>
+                <div class="item-details">
+                  <h4>Zamioculca</h4>
+                  <div class="item-variant">Tamanho: M (15cm)</div>
+                  <div class="item-price">
+                    <span class="item-quantity">1 x</span>
+                    <span class="item-amount">R$89,90</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="summary-item">
+                <div class="item-image">
+                  <img
+                    src="images/products/planta6.jpg"
+                    alt="Costela de Adão"
+                  />
+                </div>
+                <div class="item-details">
+                  <h4>Costela de Adão</h4>
+                  <div class="item-variant">Tamanho: P (13cm)</div>
+                  <div class="item-price">
+                    <span class="item-quantity">1 x</span>
+                    <span class="item-amount">R$79,90</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="summary-totals">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span>R$169,80</span>
+              </div>
+              <div class="summary-row">
+                <span>Frete</span>
+                <span>Grátis</span>
+              </div>
+              <div class="summary-row discount">
+                <span>Desconto</span>
+                <span>R$0,00</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span>R$169,80</span>
+              </div>
+            </div>
+
+            <div class="summary-shipping">
+              <h4>Endereço de Entrega</h4>
+              <p>Ana Silva</p>
+              <p>Rua das Flores, 123, Apto 101</p>
+              <p>Jardim Primavera</p>
+              <p>São Paulo - SP, 01234-567</p>
+              <p>Brasil</p>
+              <p>Telefone: (11) 98765-4321</p>
+              <a href="checkout-endereco.html" class="edit-address">Editar</a>
+            </div>
+
+            <div class="summary-shipping-method">
+              <h4>Método de Envio</h4>
+              <div class="shipping-method">
+                <span class="method-name">Entrega Expressa</span>
+                <span class="method-estimate">Entrega em até 3 dias úteis</span>
+              </div>
+            </div>
+
+            <div class="summary-secure">
+              <div class="secure-info">
+                <i class="fas fa-lock"></i>
+                <span>Pagamento 100% seguro</span>
+              </div>
+              <div class="secure-badges">
+                <img src="images/secure-payment.png" alt="Pagamento Seguro" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>PlantaShop</h3>
+            <p>
+              Seu marketplace de plantas online com variedade, qualidade e
+              preços acessíveis.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categorias</h4>
+            <ul>
+              <li>
+                <a href="categorias.html?cat=interior">Plantas de Interior</a>
+              </li>
+              <li>
+                <a href="categorias.html?cat=exterior">Plantas de Exterior</a>
+              </li>
+              <li><a href="categorias.html?cat=suculentas">Suculentas</a></li>
+              <li>
+                <a href="categorias.html?cat=vasos">Vasos e Acessórios</a>
+              </li>
+              <li><a href="categorias.html?cat=sementes">Sementes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Av. das Plantas, 123 - São
+                Paulo
+              </li>
+              <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+              <li><i class="fas fa-envelope"></i> contato@plantashop.com.br</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 PlantaShop - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/checkout-pagamento.js"></script>
+  </body>
+</html>

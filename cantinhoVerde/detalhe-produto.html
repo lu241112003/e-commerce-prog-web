@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Produto | Plantas Marketplace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detalhe-produto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Planta<span>Shop</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="conta.html"><i class="fas fa-user"></i></a>
+          <a href="pesquisa.html"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / <a href="produtos.html">Produtos</a> /
+          <a href="categorias.html?cat=interior">Plantas de Interior</a> /
+          <span>Zamioculca</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-detail-container">
+          <!-- Product Images -->
+          <div class="product-images">
+            <div class="product-main-image">
+              <img
+                src="images/products/planta1.jpg"
+                alt="Zamioculca"
+                id="mainImage"
+              />
+              <div class="image-zoom-icon">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+            <div class="product-thumbnails">
+              <div
+                class="thumbnail active"
+                data-image="images/products/planta1.jpg"
+              >
+                <img
+                  src="images/products/planta1.jpg"
+                  alt="Zamioculca - Imagem 1"
+                />
+              </div>
+              <div class="thumbnail" data-image="images/products/planta1-2.jpg">
+                <img
+                  src="images/products/planta1-2.jpg"
+                  alt="Zamioculca - Imagem 2"
+                />
+              </div>
+              <div class="thumbnail" data-image="images/products/planta1-3.jpg">
+                <img
+                  src="images/products/planta1-3.jpg"
+                  alt="Zamioculca - Imagem 3"
+                />
+              </div>
+              <div class="thumbnail" data-image="images/products/planta1-4.jpg">
+                <img
+                  src="images/products/planta1-4.jpg"
+                  alt="Zamioculca - Imagem 4"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <h1 class="product-title">Zamioculca</h1>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-count">(32 avaliações)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">R$89,90</span>
+              <span class="installment">ou 3x de R$29,97 sem juros</span>
+            </div>
+            <div class="product-short-description">
+              <p>
+                A Zamioculca é uma planta de interior conhecida por sua
+                resistência e baixa manutenção. Ideal para ambientes internos
+                com pouca luz.
+              </p>
+            </div>
+            <div class="product-meta">
+              <div class="meta-item">
+                <span class="meta-label">Categoria:</span>
+                <span class="meta-value">Planta de Interior</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Tamanho:</span>
+                <span class="meta-value">Médio (40-60cm)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Nível de Cuidado:</span>
+                <span class="meta-value">Fácil</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Disponibilidade:</span>
+                <span class="meta-value in-stock">Em estoque</span>
+              </div>
+            </div>
+            <div class="product-options">
+              <div class="option-group">
+                <label>Tamanho do Vaso:</label>
+                <div class="option-buttons">
+                  <button class="option-button">P (13cm)</button>
+                  <button class="option-button active">M (15cm)</button>
+                  <button class="option-button">G (21cm)</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-actions">
+              <div class="quantity-selector">
+                <button class="quantity-btn minus">-</button>
+                <input type="number" value="1" min="1" class="quantity-input" />
+                <button class="quantity-btn plus">+</button>
+              </div>
+              <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+              <button class="btn-buy-now">Comprar Agora</button>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="product-delivery">
+              <div class="delivery-info">
+                <i class="fas fa-truck"></i>
+                <div class="delivery-text">
+                  <p>Entrega para todo o Brasil</p>
+                  <a href="#" class="calculate-shipping">Calcular frete</a>
+                </div>
+              </div>
+              <div class="delivery-info">
+                <i class="fas fa-shield-alt"></i>
+                <div class="delivery-text">
+                  <p>Garantia de 30 dias</p>
+                  <a href="#" class="view-policy">Ver política</a>
+                </div>
+              </div>
+            </div>
+            <div class="product-share">
+              <span>Compartilhar:</span>
+              <div class="share-buttons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+          <div class="tabs-header">
+            <button class="tab-button active" data-tab="description">
+              Descrição
+            </button>
+            <button class="tab-button" data-tab="care">Cuidados</button>
+            <button class="tab-button" data-tab="specifications">
+              Especificações
+            </button>
+            <button class="tab-button" data-tab="reviews">
+              Avaliações (32)
+            </button>
+          </div>
+          <div class="tabs-content">
+            <div class="tab-panel active" id="description">
+              <div class="tab-content">
+                <h3>Sobre a Zamioculca</h3>
+                <p>
+                  A Zamioculca (Zamioculcas zamiifolia), também conhecida como
+                  planta ZZ, é uma planta tropical originária da África
+                  Oriental. Ela se tornou extremamente popular como planta de
+                  interior devido à sua aparência elegante e à facilidade de
+                  cultivo.
+                </p>
+                <p>
+                  Com folhas brilhantes, verde-escuras e uma estrutura ereta, a
+                  Zamioculca adiciona um toque de sofisticação a qualquer
+                  ambiente. Suas folhas são compostas por folíolos ovais que
+                  crescem em hastes carnudas, criando um visual arquitetônico
+                  distinto.
+                </p>
+                <p>
+                  Uma das características mais apreciadas da Zamioculca é sua
+                  incrível resistência. Ela pode sobreviver em condições de
+                  pouca luz, baixa umidade e até mesmo com regas esporádicas, o
+                  que a torna ideal para iniciantes ou para pessoas com pouco
+                  tempo para cuidar de plantas.
+                </p>
+                <p>
+                  Além de sua beleza e facilidade de cultivo, a Zamioculca
+                  também é conhecida por suas propriedades purificadoras de ar,
+                  ajudando a melhorar a qualidade do ambiente interno.
+                </p>
+
+                <div class="product-features">
+                  <div class="feature">
+                    <div class="feature-icon">
+                      <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h4>Luz</h4>
+                      <p>
+                        Tolera baixa luminosidade, mas cresce melhor em luz
+                        indireta.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature">
+                    <div class="feature-icon">
+                      <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h4>Água</h4>
+                      <p>
+                        Rega moderada, deixando o solo secar entre as regas.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature">
+                    <div class="feature-icon">
+                      <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h4>Temperatura</h4>
+                      <p>Prefere temperaturas entre 18°C e 26°C.</p>
+                    </div>
+                  </div>
+                  <div class="feature">
+                    <div class="feature-icon">
+                      <i class="fas fa-paw"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h4>Pet Friendly</h4>
+                      <p>Não. Tóxica para cães e gatos.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-panel" id="care">
+              <div class="tab-content">
+                <h3>Cuidados com a Zamioculca</h3>
+                <div class="care-instructions">
+                  <div class="care-item">
+                    <h4><i class="fas fa-sun"></i> Iluminação</h4>
+                    <p>
+                      A Zamioculca se adapta bem a diferentes condições de luz,
+                      mas prefere luz indireta brilhante. Ela pode tolerar baixa
+                      luminosidade, mas seu crescimento será mais lento. Evite
+                      luz solar direta, pois pode queimar suas folhas.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4><i class="fas fa-tint"></i> Rega</h4>
+                    <p>
+                      Regue moderadamente, permitindo que o solo seque
+                      completamente entre as regas. No inverno, reduza ainda
+                      mais a frequência. O excesso de água é a principal causa
+                      de problemas com esta planta, podendo levar ao
+                      apodrecimento das raízes.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4>
+                      <i class="fas fa-thermometer-half"></i> Temperatura e
+                      Umidade
+                    </h4>
+                    <p>
+                      Prefere temperaturas entre 18°C e 26°C. Não tolera bem
+                      temperaturas abaixo de 10°C. Quanto à umidade, adapta-se
+                      bem a ambientes secos, não sendo necessário umidificar o
+                      ar ao seu redor.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4><i class="fas fa-seedling"></i> Solo e Vaso</h4>
+                    <p>
+                      Use um substrato bem drenado, como uma mistura para
+                      plantas tropicais. O vaso deve ter furos de drenagem para
+                      evitar o acúmulo de água. Troque o vaso a cada 2-3 anos ou
+                      quando as raízes começarem a sair pelos furos de drenagem.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4><i class="fas fa-leaf"></i> Adubação</h4>
+                    <p>
+                      Adube a cada 3 meses durante a primavera e o verão com um
+                      fertilizante balanceado diluído pela metade da
+                      concentração recomendada. No outono e inverno, não é
+                      necessário adubar.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4><i class="fas fa-cut"></i> Poda</h4>
+                    <p>
+                      A poda não é necessária para o desenvolvimento da planta,
+                      mas você pode remover folhas amareladas ou danificadas
+                      para manter a aparência estética.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4>
+                      <i class="fas fa-exclamation-triangle"></i> Problemas
+                      Comuns
+                    </h4>
+                    <p>
+                      Folhas amareladas geralmente indicam excesso de água.
+                      Manchas marrons podem ser causadas por queimaduras
+                      solares. A planta é resistente a pragas, mas pode
+                      ocasionalmente ser afetada por cochonilhas ou ácaros.
+                    </p>
+                  </div>
+                  <div class="care-item">
+                    <h4><i class="fas fa-info-circle"></i> Dicas Extras</h4>
+                    <p>
+                      Limpe as folhas regularmente com um pano úmido para
+                      remover a poeira e manter seu brilho natural. A planta
+                      contém cristais de oxalato de cálcio, que são tóxicos se
+                      ingeridos, por isso mantenha-a fora do alcance de crianças
+                      e animais de estimação.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-panel" id="specifications">
+              <div class="tab-content">
+                <h3>Especificações Técnicas</h3>
+                <table class="specifications-table">
+                  <tr>
+                    <th>Nome Científico</th>
+                    <td>Zamioculcas zamiifolia</td>
+                  </tr>
+                  <tr>
+                    <th>Família</th>
+                    <td>Araceae</td>
+                  </tr>
+                  <tr>
+                    <th>Origem</th>
+                    <td>África Oriental (Tanzânia, Zanzibar)</td>
+                  </tr>
+                  <tr>
+                    <th>Altura Média</th>
+                    <td>40-60 cm (varia conforme o tamanho do vaso)</td>
+                  </tr>
+                  <tr>
+                    <th>Largura Média</th>
+                    <td>30-40 cm</td>
+                  </tr>
+                  <tr>
+                    <th>Ciclo de Vida</th>
+                    <td>Perene</td>
+                  </tr>
+                  <tr>
+                    <th>Velocidade de Crescimento</th>
+                    <td>Lenta</td>
+                  </tr>
+                  <tr>
+                    <th>Tipo de Folhagem</th>
+                    <td>Folhas compostas, brilhantes, verde-escuras</td>
+                  </tr>
+                  <tr>
+                    <th>Floração</th>
+                    <td>Rara em cultivo interno</td>
+                  </tr>
+                  <tr>
+                    <th>Toxicidade</th>
+                    <td>Tóxica para humanos e animais se ingerida</td>
+                  </tr>
+                  <tr>
+                    <th>Propriedades</th>
+                    <td>Purificadora de ar</td>
+                  </tr>
+                  <tr>
+                    <th>Conteúdo da Embalagem</th>
+                    <td>1 Zamioculca em vaso de plástico</td>
+                  </tr>
+                  <tr>
+                    <th>Dimensões da Embalagem</th>
+                    <td>Varia conforme o tamanho selecionado</td>
+                  </tr>
+                  <tr>
+                    <th>Peso</th>
+                    <td>Aproximadamente 1,5 kg (vaso médio)</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="tab-panel" id="reviews">
+              <div class="tab-content">
+                <div class="reviews-summary">
+                  <div class="average-rating">
+                    <div class="rating-number">4.5</div>
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-count">Baseado em 32 avaliações</div>
+                  </div>
+                  <div class="rating-bars">
+                    <div class="rating-bar-item">
+                      <div class="rating-label">5 estrelas</div>
+                      <div class="rating-bar">
+                        <div class="rating-fill" style="width: 70%"></div>
+                      </div>
+                      <div class="rating-percent">70%</div>
+                    </div>
+                    <div class="rating-bar-item">
+                      <div class="rating-label">4 estrelas</div>
+                      <div class="rating-bar">
+                        <div class="rating-fill" style="width: 20%"></div>
+                      </div>
+                      <div class="rating-percent">20%</div>
+                    </div>
+                    <div class="rating-bar-item">
+                      <div class="rating-label">3 estrelas</div>
+                      <div class="rating-bar">
+                        <div class="rating-fill" style="width: 5%"></div>
+                      </div>
+                      <div class="rating-percent">5%</div>
+                    </div>
+                    <div class="rating-bar-item">
+                      <div class="rating-label">2 estrelas</div>
+                      <div class="rating-bar">
+                        <div class="rating-fill" style="width: 3%"></div>
+                      </div>
+                      <div class="rating-percent">3%</div>
+                    </div>
+                    <div class="rating-bar-item">
+                      <div class="rating-label">1 estrela</div>
+                      <div class="rating-bar">
+                        <div class="rating-fill" style="width: 2%"></div>
+                      </div>
+                      <div class="rating-percent">2%</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="reviews-list">
+                  <div class="review-item">
+                    <div class="review-header">
+                      <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                          <img
+                            src="images/avatars/avatar1.jpg"
+                            alt="Ana Paula"
+                          />
+                        </div>
+                        <div class="reviewer-details">
+                          <h4>Ana Paula</h4>
+                          <div class="review-date">12/05/2023</div>
+                        </div>
+                      </div>
+                      <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                    <div class="review-content">
+                      <h5>Planta perfeita para iniciantes!</h5>
+                      <p>
+                        Comprei esta Zamioculca há 3 meses e estou muito
+                        satisfeita. A planta chegou em perfeito estado, bem
+                        embalada e com um tamanho maior do que eu esperava.
+                        Mesmo sendo iniciante no cultivo de plantas, não tive
+                        dificuldades em cuidar dela. Recomendo para quem quer
+                        começar a ter plantas em casa!
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="review-item">
+                    <div class="review-header">
+                      <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                          <img
+                            src="images/avatars/avatar2.jpg"
+                            alt="Carlos Mendes"
+                          />
+                        </div>
+                        <div class="reviewer-details">
+                          <h4>Carlos Mendes</h4>
+                          <div class="review-date">28/04/2023</div>
+                        </div>
+                      </div>
+                      <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    </div>
+                    <div class="review-content">
+                      <h5>Ótima planta, entrega rápida</h5>
+                      <p>
+                        A Zamioculca é realmente resistente como dizem. Tenho
+                        ela há quase 2 meses em um local com pouca luz e ela
+                        continua linda. A entrega foi rápida e a planta veio
+                        muito bem embalada. Tirei uma estrela apenas porque
+                        achei o vaso um pouco simples, mas a planta em si é
+                        excelente.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="review-item">
+                    <div class="review-header">
+                      <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                          <img
+                            src="images/avatars/avatar3.jpg"
+                            alt="Mariana Costa"
+                          />
+                        </div>
+                        <div class="reviewer-details">
+                          <h4>Mariana Costa</h4>
+                          <div class="review-date">15/04/2023</div>
+                        </div>
+                      </div>
+                      <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                      </div>
+                    </div>
+                    <div class="review-content">
+                      <h5>Superou minhas expectativas</h5>
+                      <p>
+                        Planta linda e saudável! Chegou muito bem embalada e em
+                        perfeito estado. Já tenho há mais de um mês e está se
+                        desenvolvendo muito bem. O atendimento da loja também
+                        foi excelente, responderam todas as minhas dúvidas sobre
+                        os cuidados. Recomendo!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="load-more-reviews">
+                  <button class="btn-load-more">
+                    Carregar mais avaliações
+                  </button>
+                </div>
+
+                <div class="write-review">
+                  <h3>Deixe sua avaliação</h3>
+                  <form class="review-form">
+                    <div class="form-group">
+                      <label>Sua avaliação:</label>
+                      <div class="rating-select">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="reviewTitle">Título da avaliação:</label>
+                      <input
+                        type="text"
+                        id="reviewTitle"
+                        placeholder="Ex: Ótima planta para decoração"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="reviewContent">Sua opinião:</label>
+                      <textarea
+                        id="reviewContent"
+                        rows="5"
+                        placeholder="Conte sua experiência com este produto..."
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-review">
+                      Enviar Avaliação
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products">
+          <h2 class="section-title">Produtos Relacionados</h2>
+          <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/products/planta2.jpg"
+                  alt="Espada de São Jorge"
+                />
+                <div class="product-actions">
+                  <button class="quick-view"><i class="fas fa-eye"></i></button>
+                  <button class="add-to-wishlist">
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">
+                  <a href="detalhe-produto.html?id=2">Espada de São Jorge</a>
+                </h3>
+                <div class="product-category">Planta de Interior</div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>(5.0)</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">R$64,50</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/products/planta6.jpg" alt="Costela de Adão" />
+                <div class="product-actions">
+                  <button class="quick-view"><i class="fas fa-eye"></i></button>
+                  <button class="add-to-wishlist">
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">
+                  <a href="detalhe-produto.html?id=6">Costela de Adão</a>
+                </h3>
+                <div class="product-category">Planta de Interior</div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>(5.0)</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">R$79,90</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/products/planta7.jpg"
+                  alt="Samambaia Americana"
+                />
+                <div class="product-actions">
+                  <button class="quick-view"><i class="fas fa-eye"></i></button>
+                  <button class="add-to-wishlist">
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">
+                  <a href="detalhe-produto.html?id=7">Samambaia Americana</a>
+                </h3>
+                <div class="product-category">Planta de Interior</div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <span>(4.0)</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">R$59,90</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/products/planta8.jpg" alt="Lírio da Paz" />
+                <div class="product-actions">
+                  <button class="quick-view"><i class="fas fa-eye"></i></button>
+                  <button class="add-to-wishlist">
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">
+                  <a href="detalhe-produto.html?id=8">Lírio da Paz</a>
+                </h3>
+                <div class="product-category">Flor</div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span>(4.5)</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">R$69,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed">
+      <div class="container">
+        <h2 class="section-title">Vistos Recentemente</h2>
+        <div class="products-slider">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="images/products/planta3.jpg"
+                alt="Suculenta Echeveria"
+              />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="detalhe-produto.html?id=3">Suculenta Echeveria</a>
+              </h3>
+              <div class="product-category">Suculenta</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">R$29,90</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="images/products/planta4.jpg" alt="Cacto Mandacaru" />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="detalhe-produto.html?id=4">Cacto Mandacaru</a>
+              </h3>
+              <div class="product-category">Cacto</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(3.5)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">R$39,90</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Inscreva-se em nossa Newsletter</h2>
+          <p>
+            Receba dicas de cuidados com plantas e ofertas exclusivas
+            diretamente no seu e-mail.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu endereço de e-mail" required />
+            <button type="submit">Inscrever-se</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-widgets">
+          <div class="footer-widget">
+            <div class="footer-logo">
+              <img src="images/logo-white.png" alt="Plantas Marketplace" />
+            </div>
+            <p class="footer-about">
+              Somos uma loja especializada em plantas ornamentais, suculentas,
+              cactos e acessórios para jardinagem.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-widget">
+            <h3 class="widget-title">Links Rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="categorias.html">Categorias</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="contato.html">Contato</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-widget">
+            <h3 class="widget-title">Categorias</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="categorias.html?cat=interior">Plantas de Interior</a>
+              </li>
+              <li>
+                <a href="categorias.html?cat=exterior">Plantas de Exterior</a>
+              </li>
+              <li><a href="categorias.html?cat=suculentas">Suculentas</a></li>
+              <li><a href="categorias.html?cat=cactos">Cactos</a></li>
+              <li><a href="categorias.html?cat=flores">Flores</a></li>
+              <li><a href="categorias.html?cat=acessorios">Acessórios</a></li>
+            </ul>
+          </div>
+          <div class="footer-widget">
+            <h3 class="widget-title">Contato</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Av. das Plantas, 123 -
+                Jardim Botânico
+              </li>
+              <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+              <li>
+                <i class="fas fa-envelope"></i> contato@plantasmarketplace.com
+              </li>
+              <li><i class="fas fa-clock"></i> Seg - Sex: 9h às 18h</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            &copy; 2023 Plantas Marketplace. Todos os direitos reservados.
+          </div>
+          <div class="payment-methods">
+            <img src="images/payments.png" alt="Métodos de Pagamento" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Image Zoom Modal -->
+    <div class="image-zoom-modal" id="imageZoomModal">
+      <span class="close-zoom">&times;</span>
+      <img class="zoom-content" id="zoomedImage" />
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/detalhe-produto.js"></script>
+  </body>
+</html>

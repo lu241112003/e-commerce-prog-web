@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlantaShop - Marketplace de Plantas</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Planta<span>Shop</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="conta.html"><i class="fas fa-user"></i></a>
+          <a href="pesquisa.html"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Transforme seu espaço com nossas plantas</h2>
+          <p>
+            Descubra uma variedade de plantas para interior e exterior com
+            entrega em todo o Brasil
+          </p>
+          <a href="produtos.html" class="btn">Explorar Coleção</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">Categorias Populares</h2>
+        <div class="category-grid">
+          <div class="category-card">
+            <img src="img/plantas-interior.jpg" alt="Plantas de Interior" />
+            <h3>Plantas de Interior</h3>
+            <a href="categorias.html?cat=interior" class="btn-small"
+              >Ver Mais</a
+            >
+          </div>
+          <div class="category-card">
+            <img src="img/suculentas.jpg" alt="Suculentas" />
+            <h3>Suculentas</h3>
+            <a href="categorias.html?cat=suculentas" class="btn-small"
+              >Ver Mais</a
+            >
+          </div>
+          <div class="category-card">
+            <img src="img/jardim.jpg" alt="Plantas para Jardim" />
+            <h3>Plantas para Jardim</h3>
+            <a href="categorias.html?cat=jardim" class="btn-small">Ver Mais</a>
+          </div>
+          <div class="category-card">
+            <img src="img/vasos.jpg" alt="Vasos e Acessórios" />
+            <h3>Vasos e Acessórios</h3>
+            <a href="categorias.html?cat=vasos" class="btn-small">Ver Mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <h2 class="section-title">Plantas em Destaque</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/produto1.jpg" alt="Zamioculca" />
+              <div class="product-tag">Destaque</div>
+            </div>
+            <div class="product-info">
+              <h3>Zamioculca</h3>
+              <p class="product-description">
+                Planta resistente ideal para ambientes internos
+              </p>
+              <div class="product-price">
+                <span class="price">R$ 89,90</span>
+              </div>
+              <button class="btn-add-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/produto2.jpg" alt="Espada de São Jorge" />
+              <div class="product-tag">Destaque</div>
+            </div>
+            <div class="product-info">
+              <h3>Espada de São Jorge</h3>
+              <p class="product-description">
+                Planta purificadora de ar e de baixa manutenção
+              </p>
+              <div class="product-price">
+                <span class="price">R$ 69,90</span>
+              </div>
+              <button class="btn-add-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/produto3.jpg" alt="Suculenta Echeveria" />
+              <div class="product-tag">Novo</div>
+            </div>
+            <div class="product-info">
+              <h3>Suculenta Echeveria</h3>
+              <p class="product-description">
+                Suculenta decorativa com roseta de folhas
+              </p>
+              <div class="product-price">
+                <span class="price">R$ 29,90</span>
+              </div>
+              <button class="btn-add-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/produto4.jpg" alt="Costela de Adão" />
+              <div class="product-tag">Popular</div>
+            </div>
+            <div class="product-info">
+              <h3>Costela de Adão</h3>
+              <p class="product-description">
+                Planta tropical com folhas recortadas
+              </p>
+              <div class="product-price">
+                <span class="price">R$ 119,90</span>
+              </div>
+              <button class="btn-add-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+        <div class="view-all">
+          <a href="produtos.html" class="btn">Ver Todos os Produtos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <i class="fas fa-truck"></i>
+            <h3>Entrega Rápida</h3>
+            <p>Entregamos em todo o Brasil</p>
+          </div>
+          <div class="benefit-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Plantas Saudáveis</h3>
+            <p>Garantia de qualidade</p>
+          </div>
+          <div class="benefit-card">
+            <i class="fas fa-headset"></i>
+            <h3>Suporte Especializado</h3>
+            <p>Dúvidas sobre cuidados</p>
+          </div>
+          <div class="benefit-card">
+            <i class="fas fa-undo"></i>
+            <h3>Troca Garantida</h3>
+            <p>Em caso de problemas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Receba Novidades e Promoções</h2>
+          <p>
+            Cadastre-se para receber dicas de cuidados com plantas e ofertas
+            exclusivas
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu melhor e-mail" required />
+            <button type="submit" class="btn">Inscrever-se</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>PlantaShop</h3>
+            <p>
+              Seu marketplace de plantas online com variedade, qualidade e
+              preços acessíveis.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categorias</h4>
+            <ul>
+              <li>
+                <a href="categorias.html?cat=interior">Plantas de Interior</a>
+              </li>
+              <li>
+                <a href="categorias.html?cat=exterior">Plantas de Exterior</a>
+              </li>
+              <li><a href="categorias.html?cat=suculentas">Suculentas</a></li>
+              <li>
+                <a href="categorias.html?cat=vasos">Vasos e Acessórios</a>
+              </li>
+              <li><a href="categorias.html?cat=sementes">Sementes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Av. das Plantas, 123 - São
+                Paulo
+              </li>
+              <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+              <li><i class="fas fa-envelope"></i> contato@plantashop.com.br</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 PlantaShop - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar Produto | Painel Administrativo</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="admin-body">
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-logo">
+            <img src="../images/logo.png" alt="Plantas Marketplace" />
+          </div>
+          <button class="admin-sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="admin-user-info">
+          <div class="admin-user-avatar">
+            <img src="../images/admin-avatar.jpg" alt="Admin" />
+          </div>
+          <div class="admin-user-details">
+            <h4>Admin</h4>
+            <p>Administrador</p>
+          </div>
+        </div>
+        <nav class="admin-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="produtos.html">
+                <i class="fas fa-leaf"></i>
+                <span>Produtos</span>
+              </a>
+            </li>
+            <li>
+              <a href="categorias.html">
+                <i class="fas fa-tags"></i>
+                <span>Categorias</span>
+              </a>
+            </li>
+            <li>
+              <a href="pedidos.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Pedidos</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientes.html">
+                <i class="fas fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li>
+              <a href="relatorios.html">
+                <i class="fas fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i>
+                <span>Configurações</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="admin-sidebar-footer">
+          <a href="login.html" class="admin-logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+          <div class="admin-header-left">
+            <h1>Adicionar Produto</h1>
+            <nav class="admin-breadcrumb">
+              <a href="dashboard.html">Home</a> /
+              <a href="produtos.html">Produtos</a> /
+              <span>Adicionar Produto</span>
+            </nav>
+          </div>
+          <div class="admin-header-right">
+            <div class="admin-notifications">
+              <button class="admin-notification-btn">
+                <i class="far fa-bell"></i>
+                <span class="notification-badge">3</span>
+              </button>
+              <div class="admin-notification-dropdown">
+                <div class="notification-header">
+                  <h3>Notificações</h3>
+                  <a href="#">Marcar todas como lidas</a>
+                </div>
+                <ul class="notification-list">
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo pedido recebido</p>
+                        <span>Há 5 minutos</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo cliente registrado</p>
+                        <span>Há 2 horas</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Estoque baixo: Zamioculca</p>
+                        <span>Há 1 dia</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <div class="notification-footer">
+                  <a href="#">Ver todas as notificações</a>
+                </div>
+              </div>
+            </div>
+            <div class="admin-profile">
+              <button class="admin-profile-btn">
+                <img src="../images/admin-avatar.jpg" alt="Admin" />
+                <span>Admin</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="admin-profile-dropdown">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+                  </li>
+                  <li>
+                    <a href="login.html"
+                      ><i class="fas fa-sign-out-alt"></i> Sair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Add Product Content -->
+        <div class="admin-content">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>Informações do Produto</h2>
+            </div>
+            <div class="admin-card-body">
+              <form id="addProductForm" class="admin-form">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="productName">Nome do Produto*</label>
+                    <input
+                      type="text"
+                      id="productName"
+                      name="productName"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="productSKU">SKU do Produto</label>
+                    <input type="text" id="productSKU" name="productSKU" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="productCategory">Categoria*</label>
+                    <select
+                      id="productCategory"
+                      name="productCategory"
+                      required
+                    >
+                      <option value="">Selecione uma categoria</option>
+                      <option value="interior">Plantas de Interior</option>
+                      <option value="exterior">Plantas de Exterior</option>
+                      <option value="suculentas">Suculentas</option>
+                      <option value="cactos">Cactos</option>
+                      <option value="flores">Flores</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="productTags">Tags</label>
+                    <input
+                      type="text"
+                      id="productTags"
+                      name="productTags"
+                      placeholder="Separe as tags com vírgulas"
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="productPrice">Preço Regular (R$)*</label>
+                    <input
+                      type="number"
+                      id="productPrice"
+                      name="productPrice"
+                      step="0.01"
+                      min="0"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="productSalePrice">Preço Promocional (R$)</label>
+                    <input
+                      type="number"
+                      id="productSalePrice"
+                      name="productSalePrice"
+                      step="0.01"
+                      min="0"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="productStock">Estoque*</label>
+                    <input
+                      type="number"
+                      id="productStock"
+                      name="productStock"
+                      min="0"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="productDescription">Descrição Curta*</label>
+                  <textarea
+                    id="productDescription"
+                    name="productDescription"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="productFullDescription">Descrição Completa</label>
+                  <textarea
+                    id="productFullDescription"
+                    name="productFullDescription"
+                    rows="6"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Imagens do Produto</label>
+                  <div class="product-images-uploader">
+                    <div class="product-image-preview">
+                      <div class="image-upload-placeholder">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Arraste e solte ou clique para fazer upload</p>
+                      </div>
+                      <input
+                        type="file"
+                        id="productImage"
+                        name="productImage"
+                        accept="image/*"
+                        multiple
+                      />
+                    </div>
+                    <div class="product-image-list">
+                      <p>Nenhuma imagem selecionada</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="productSize">Tamanho</label>
+                    <select id="productSize" name="productSize">
+                      <option value="">Selecione um tamanho</option>
+                      <option value="pequeno">Pequeno</option>
+                      <option value="medio">Médio</option>
+                      <option value="grande">Grande</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="productCare">Nível de Cuidado</label>
+                    <select id="productCare" name="productCare">
+                      <option value="">Selecione um nível</option>
+                      <option value="facil">Fácil</option>
+                      <option value="medio">Médio</option>
+                      <option value="avancado">Avançado</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="productLight">Necessidade de Luz</label>
+                    <select id="productLight" name="productLight">
+                      <option value="">Selecione uma opção</option>
+                      <option value="baixa">Baixa</option>
+                      <option value="media">Média</option>
+                      <option value="alta">Alta</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="productWatering">Frequência de Rega</label>
+                    <select id="productWatering" name="productWatering">
+                      <option value="">Selecione uma opção</option>
+                      <option value="diaria">Diária</option>
+                      <option value="semanal">Semanal</option>
+                      <option value="quinzenal">Quinzenal</option>
+                      <option value="mensal">Mensal</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="productStatus">Status</label>
+                    <select id="productStatus" name="productStatus">
+                      <option value="published">Publicado</option>
+                      <option value="draft">Rascunho</option>
+                      <option value="outofstock">Fora de Estoque</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Características</label>
+                  <div class="checkbox-group">
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="features[]"
+                        value="purifica_ar"
+                      />
+                      Purifica o Ar</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="features[]"
+                        value="pet_friendly"
+                      />
+                      Pet Friendly</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="features[]"
+                        value="baixa_manutencao"
+                      />
+                      Baixa Manutenção</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="features[]"
+                        value="medicinal"
+                      />
+                      Propriedades Medicinais</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="features[]"
+                        value="comestivel"
+                      />
+                      Comestível</label
+                    >
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button
+                    type="button"
+                    class="admin-btn admin-btn-secondary"
+                    onclick="window.location.href='produtos.html'"
+                  >
+                    Cancelar
+                  </button>
+                  <button type="submit" class="admin-btn admin-btn-primary">
+                    Salvar Produto
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <script>
+      // Toggle sidebar
+      document
+        .getElementById("sidebarToggle")
+        .addEventListener("click", function () {
+          document
+            .querySelector(".admin-container")
+            .classList.toggle("sidebar-collapsed");
+        });
+
+      // Toggle dropdowns
+      const dropdownToggles = document.querySelectorAll(
+        ".admin-notification-btn, .admin-profile-btn"
+      );
+      dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const dropdown = this.nextElementSibling;
+          dropdown.classList.toggle("show");
+
+          // Fechar outros dropdowns
+          dropdownToggles.forEach((otherToggle) => {
+            if (otherToggle !== toggle) {
+              otherToggle.nextElementSibling.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Fechar dropdowns ao clicar fora
+      document.addEventListener("click", function () {
+        document
+          .querySelectorAll(
+            ".admin-notification-dropdown, .admin-profile-dropdown"
+          )
+          .forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+      });
+
+      // Imagem Preview
+      document
+        .getElementById("productImage")
+        .addEventListener("change", function (e) {
+          const files = e.target.files;
+          const imageList = document.querySelector(".product-image-list");
+
+          if (files.length > 0) {
+            imageList.innerHTML = "";
+
+            for (let i = 0; i < files.length; i++) {
+              const file = files[i];
+              const reader = new FileReader();
+
+              reader.onload = function (e) {
+                const imageItem = document.createElement("div");
+                imageItem.className = "image-item";
+
+                imageItem.innerHTML = `
+                            <img src="${e.target.result}" alt="Preview">
+                            <div class="image-actions">
+                                <button type="button" class="image-action-btn" title="Definir como Principal">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="image-action-btn" title="Remover">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        `;
+
+                imageList.appendChild(imageItem);
+              };
+
+              reader.readAsDataURL(file);
+            }
+          } else {
+            imageList.innerHTML = "<p>Nenhuma imagem selecionada</p>";
+          }
+        });
+
+      // Form Submit
+      document
+        .getElementById("addProductForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Aqui você faria uma requisição AJAX para salvar o produto
+          alert("Produto adicionado com sucesso!");
+          window.location.href = "produtos.html";
+        });
+    </script>
+  </body>
+</html>

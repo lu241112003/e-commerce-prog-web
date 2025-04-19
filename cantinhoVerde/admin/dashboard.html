@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Painel Administrativo</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="admin-body">
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-logo">
+            <img src="../images/logo.png" alt="Plantas Marketplace" />
+          </div>
+          <button class="admin-sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="admin-user-info">
+          <div class="admin-user-avatar">
+            <img src="../images/admin-avatar.jpg" alt="Admin" />
+          </div>
+          <div class="admin-user-details">
+            <h4>Admin</h4>
+            <p>Administrador</p>
+          </div>
+        </div>
+        <nav class="admin-nav">
+          <ul>
+            <li class="active">
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="produtos.html">
+                <i class="fas fa-leaf"></i>
+                <span>Produtos</span>
+              </a>
+            </li>
+            <li>
+              <a href="categorias.html">
+                <i class="fas fa-tags"></i>
+                <span>Categorias</span>
+              </a>
+            </li>
+            <li>
+              <a href="pedidos.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Pedidos</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientes.html">
+                <i class="fas fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li>
+              <a href="relatorios.html">
+                <i class="fas fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i>
+                <span>Configurações</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="admin-sidebar-footer">
+          <a href="login.html" class="admin-logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+          <div class="admin-header-left">
+            <h1>Dashboard</h1>
+            <nav class="admin-breadcrumb">
+              <a href="dashboard.html">Home</a> / <span>Dashboard</span>
+            </nav>
+          </div>
+          <div class="admin-header-right">
+            <div class="admin-search">
+              <input type="text" placeholder="Pesquisar..." />
+              <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="admin-notifications">
+              <button class="admin-notification-btn">
+                <i class="far fa-bell"></i>
+                <span class="notification-badge">3</span>
+              </button>
+              <div class="admin-notification-dropdown">
+                <div class="notification-header">
+                  <h3>Notificações</h3>
+                  <a href="#">Marcar todas como lidas</a>
+                </div>
+                <ul class="notification-list">
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo pedido recebido</p>
+                        <span>Há 5 minutos</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo cliente registrado</p>
+                        <span>Há 2 horas</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Estoque baixo: Zamioculca</p>
+                        <span>Há 1 dia</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <div class="notification-footer">
+                  <a href="#">Ver todas as notificações</a>
+                </div>
+              </div>
+            </div>
+            <div class="admin-profile">
+              <button class="admin-profile-btn">
+                <img src="../images/admin-avatar.jpg" alt="Admin" />
+                <span>Admin</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="admin-profile-dropdown">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+                  </li>
+                  <li>
+                    <a href="login.html"
+                      ><i class="fas fa-sign-out-alt"></i> Sair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="admin-content">
+          <!-- Stats Cards -->
+          <div class="admin-stats">
+            <div class="admin-stat-card">
+              <div
+                class="stat-card-icon"
+                style="background-color: rgba(76, 175, 80, 0.1)"
+              >
+                <i class="fas fa-shopping-cart" style="color: #4caf50"></i>
+              </div>
+              <div class="stat-card-info">
+                <h3>Vendas Hoje</h3>
+                <p class="stat-card-number">R$ 2.580,00</p>
+                <p class="stat-card-trend positive">
+                  <i class="fas fa-arrow-up"></i> 12.5% <span>desde ontem</span>
+                </p>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <div
+                class="stat-card-icon"
+                style="background-color: rgba(33, 150, 243, 0.1)"
+              >
+                <i class="fas fa-users" style="color: #2196f3"></i>
+              </div>
+              <div class="stat-card-info">
+                <h3>Novos Clientes</h3>
+                <p class="stat-card-number">45</p>
+                <p class="stat-card-trend positive">
+                  <i class="fas fa-arrow-up"></i> 5.2%
+                  <span>desde a semana passada</span>
+                </p>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <div
+                class="stat-card-icon"
+                style="background-color: rgba(255, 152, 0, 0.1)"
+              >
+                <i class="fas fa-box" style="color: #ff9800"></i>
+              </div>
+              <div class="stat-card-info">
+                <h3>Pedidos</h3>
+                <p class="stat-card-number">128</p>
+                <p class="stat-card-trend positive">
+                  <i class="fas fa-arrow-up"></i> 8.3%
+                  <span>desde o mês passado</span>
+                </p>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <div
+                class="stat-card-icon"
+                style="background-color: rgba(233, 30, 99, 0.1)"
+              >
+                <i class="fas fa-leaf" style="color: #e91e63"></i>
+              </div>
+              <div class="stat-card-info">
+                <h3>Produtos</h3>
+                <p class="stat-card-number">85</p>
+                <p class="stat-card-trend negative">
+                  <i class="fas fa-arrow-down"></i> 2.4%
+                  <span>estoque baixo</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Orders & Sales Chart -->
+          <div class="admin-dashboard-row">
+            <div class="admin-dashboard-col">
+              <div class="admin-card">
+                <div class="admin-card-header">
+                  <h2>Pedidos Recentes</h2>
+                  <a href="pedidos.html" class="admin-btn admin-btn-sm"
+                    >Ver Todos</a
+                  >
+                </div>
+                <div class="admin-card-body">
+                  <div class="admin-table-responsive">
+                    <table class="admin-table">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Cliente</th>
+                          <th>Produto</th>
+                          <th>Data</th>
+                          <th>Status</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>#ORD-0025</td>
+                          <td>Maria Silva</td>
+                          <td>Zamioculca</td>
+                          <td>15/04/2023</td>
+                          <td>
+                            <span class="status-badge completed">Entregue</span>
+                          </td>
+                          <td>R$ 89,90</td>
+                        </tr>
+                        <tr>
+                          <td>#ORD-0024</td>
+                          <td>João Santos</td>
+                          <td>Espada de São Jorge</td>
+                          <td>15/04/2023</td>
+                          <td>
+                            <span class="status-badge processing"
+                              >Em Processamento</span
+                            >
+                          </td>
+                          <td>R$ 64,50</td>
+                        </tr>
+                        <tr>
+                          <td>#ORD-0023</td>
+                          <td>Ana Oliveira</td>
+                          <td>Suculenta Echeveria</td>
+                          <td>14/04/2023</td>
+                          <td>
+                            <span class="status-badge shipped">Enviado</span>
+                          </td>
+                          <td>R$ 29,90</td>
+                        </tr>
+                        <tr>
+                          <td>#ORD-0022</td>
+                          <td>Carlos Pereira</td>
+                          <td>Cacto Mandacaru</td>
+                          <td>14/04/2023</td>
+                          <td>
+                            <span class="status-badge completed">Entregue</span>
+                          </td>
+                          <td>R$ 39,90</td>
+                        </tr>
+                        <tr>
+                          <td>#ORD-0021</td>
+                          <td>Fernanda Lima</td>
+                          <td>Orquídea Phalaenopsis</td>
+                          <td>13/04/2023</td>
+                          <td>
+                            <span class="status-badge cancelled"
+                              >Cancelado</span
+                            >
+                          </td>
+                          <td>R$ 96,00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="admin-dashboard-col">
+              <div class="admin-card">
+                <div class="admin-card-header">
+                  <h2>Vendas Mensais</h2>
+                  <div class="chart-period-selector">
+                    <button class="active">Diário</button>
+                    <button>Semanal</button>
+                    <button>Mensal</button>
+                  </div>
+                </div>
+                <div class="admin-card-body">
+                  <div class="sales-chart">
+                    <canvas id="salesChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Products & Recent Activities -->
+          <div class="admin-dashboard-row">
+            <div class="admin-dashboard-col">
+              <div class="admin-card">
+                <div class="admin-card-header">
+                  <h2>Produtos Mais Vendidos</h2>
+                  <a href="produtos.html" class="admin-btn admin-btn-sm"
+                    >Ver Todos</a
+                  >
+                </div>
+                <div class="admin-card-body">
+                  <ul class="top-products-list">
+                    <li>
+                      <div class="product-info">
+                        <img
+                          src="../images/products/planta1.jpg"
+                          alt="Zamioculca"
+                        />
+                        <div>
+                          <h4>Zamioculca</h4>
+                          <p>Planta de Interior</p>
+                        </div>
+                      </div>
+                      <div class="product-stats">
+                        <div class="product-sales">
+                          <span>245 vendas</span>
+                          <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                          </div>
+                        </div>
+                        <span class="product-price">R$ 89,90</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="product-info">
+                        <img
+                          src="../images/products/planta6.jpg"
+                          alt="Costela de Adão"
+                        />
+                        <div>
+                          <h4>Costela de Adão</h4>
+                          <p>Planta de Interior</p>
+                        </div>
+                      </div>
+                      <div class="product-stats">
+                        <div class="product-sales">
+                          <span>198 vendas</span>
+                          <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                          </div>
+                        </div>
+                        <span class="product-price">R$ 79,90</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="product-info">
+                        <img
+                          src="../images/products/planta2.jpg"
+                          alt="Espada de São Jorge"
+                        />
+                        <div>
+                          <h4>Espada de São Jorge</h4>
+                          <p>Planta de Interior</p>
+                        </div>
+                      </div>
+                      <div class="product-stats">
+                        <div class="product-sales">
+                          <span>187 vendas</span>
+                          <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                          </div>
+                        </div>
+                        <span class="product-price">R$ 64,50</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="product-info">
+                        <img
+                          src="../images/products/planta8.jpg"
+                          alt="Lírio da Paz"
+                        />
+                        <div>
+                          <h4>Lírio da Paz</h4>
+                          <p>Flor</p>
+                        </div>
+                      </div>
+                      <div class="product-stats">
+                        <div class="product-sales">
+                          <span>156 vendas</span>
+                          <div class="progress-bar">
+                            <div class="progress" style="width: 60%"></div>
+                          </div>
+                        </div>
+                        <span class="product-price">R$ 69,90</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="product-info">
+                        <img
+                          src="../images/products/planta5.jpg"
+                          alt="Orquídea Phalaenopsis"
+                        />
+                        <div>
+                          <h4>Orquídea Phalaenopsis</h4>
+                          <p>Flor</p>
+                        </div>
+                      </div>
+                      <div class="product-stats">
+                        <div class="product-sales">
+                          <span>132 vendas</span>
+                          <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                          </div>
+                        </div>
+                        <span class="product-price">R$ 96,00</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="admin-dashboard-col">
+              <div class="admin-card">
+                <div class="admin-card-header">
+                  <h2>Atividades Recentes</h2>
+                  <a href="#" class="admin-btn admin-btn-sm">Ver Todas</a>
+                </div>
+                <div class="admin-card-body">
+                  <ul class="activity-timeline">
+                    <li>
+                      <div
+                        class="activity-icon"
+                        style="background-color: rgba(76, 175, 80, 0.1)"
+                      >
+                        <i
+                          class="fas fa-shopping-cart"
+                          style="color: #4caf50"
+                        ></i>
+                      </div>
+                      <div class="activity-content">
+                        <h4>Novo pedido recebido</h4>
+                        <p>Maria Silva comprou Zamioculca</p>
+                        <span class="activity-time">Há 5 minutos</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="activity-icon"
+                        style="background-color: rgba(33, 150, 243, 0.1)"
+                      >
+                        <i class="fas fa-user" style="color: #2196f3"></i>
+                      </div>
+                      <div class="activity-content">
+                        <h4>Novo cliente registrado</h4>
+                        <p>João Santos criou uma conta</p>
+                        <span class="activity-time">Há 2 horas</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="activity-icon"
+                        style="background-color: rgba(255, 152, 0, 0.1)"
+                      >
+                        <i class="fas fa-truck" style="color: #ff9800"></i>
+                      </div>
+                      <div class="activity-content">
+                        <h4>Pedido enviado</h4>
+                        <p>Pedido #ORD-0023 foi enviado para Ana Oliveira</p>
+                        <span class="activity-time">Há 5 horas</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="activity-icon"
+                        style="background-color: rgba(233, 30, 99, 0.1)"
+                      >
+                        <i
+                          class="fas fa-exclamation-triangle"
+                          style="color: #e91e63"
+                        ></i>
+                      </div>
+                      <div class="activity-content">
+                        <h4>Alerta de estoque</h4>
+                        <p>Estoque baixo: Zamioculca (5 unidades restantes)</p>
+                        <span class="activity-time">Há 1 dia</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="activity-icon"
+                        style="background-color: rgba(156, 39, 176, 0.1)"
+                      >
+                        <i class="fas fa-leaf" style="color: #9c27b0"></i>
+                      </div>
+                      <div class="activity-content">
+                        <h4>Produto atualizado</h4>
+                        <p>Preço da Orquídea Phalaenopsis foi atualizado</p>
+                        <span class="activity-time">Há 2 dias</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+      // Inicializar o gráfico de vendas
+      const ctx = document.getElementById("salesChart").getContext("2d");
+      const salesChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "01/04",
+            "02/04",
+            "03/04",
+            "04/04",
+            "05/04",
+            "06/04",
+            "07/04",
+            "08/04",
+            "09/04",
+            "10/04",
+            "11/04",
+            "12/04",
+            "13/04",
+            "14/04",
+            "15/04",
+          ],
+          datasets: [
+            {
+              label: "Vendas (R$)",
+              data: [
+                1200, 1900, 1500, 2000, 1800, 2500, 2200, 1800, 2300, 2100,
+                2400, 2800, 2600, 2300, 2580,
+              ],
+              backgroundColor: "rgba(76, 175, 80, 0.1)",
+              borderColor: "#4CAF50",
+              borderWidth: 2,
+              tension: 0.4,
+              pointBackgroundColor: "#fff",
+              pointBorderColor: "#4CAF50",
+              pointBorderWidth: 2,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: "rgba(0, 0, 0, 0.05)",
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+
+      // Toggle sidebar
+      document
+        .getElementById("sidebarToggle")
+        .addEventListener("click", function () {
+          document
+            .querySelector(".admin-container")
+            .classList.toggle("sidebar-collapsed");
+        });
+
+      // Toggle dropdowns
+      const dropdownToggles = document.querySelectorAll(
+        ".admin-notification-btn, .admin-profile-btn"
+      );
+      dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const dropdown = this.nextElementSibling;
+          dropdown.classList.toggle("show");
+
+          // Fechar outros dropdowns
+          dropdownToggles.forEach((otherToggle) => {
+            if (otherToggle !== toggle) {
+              otherToggle.nextElementSibling.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Fechar dropdowns ao clicar fora
+      document.addEventListener("click", function () {
+        document
+          .querySelectorAll(
+            ".admin-notification-dropdown, .admin-profile-dropdown"
+          )
+          .forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+      });
+    </script>
+  </body>
+</html>

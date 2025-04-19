@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Produtos | Painel Administrativo</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="admin-body">
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-logo">
+            <img src="../images/logo.png" alt="Plantas Marketplace" />
+          </div>
+          <button class="admin-sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="admin-user-info">
+          <div class="admin-user-avatar">
+            <img src="../images/admin-avatar.jpg" alt="Admin" />
+          </div>
+          <div class="admin-user-details">
+            <h4>Admin</h4>
+            <p>Administrador</p>
+          </div>
+        </div>
+        <nav class="admin-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="produtos.html">
+                <i class="fas fa-leaf"></i>
+                <span>Produtos</span>
+              </a>
+            </li>
+            <li>
+              <a href="categorias.html">
+                <i class="fas fa-tags"></i>
+                <span>Categorias</span>
+              </a>
+            </li>
+            <li>
+              <a href="pedidos.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Pedidos</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientes.html">
+                <i class="fas fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li>
+              <a href="relatorios.html">
+                <i class="fas fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i>
+                <span>Configurações</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="admin-sidebar-footer">
+          <a href="login.html" class="admin-logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+          <div class="admin-header-left">
+            <h1>Gerenciar Produtos</h1>
+            <nav class="admin-breadcrumb">
+              <a href="dashboard.html">Home</a> / <span>Produtos</span>
+            </nav>
+          </div>
+          <div class="admin-header-right">
+            <div class="admin-search">
+              <input type="text" placeholder="Pesquisar produtos..." />
+              <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="admin-notifications">
+              <button class="admin-notification-btn">
+                <i class="far fa-bell"></i>
+                <span class="notification-badge">3</span>
+              </button>
+              <div class="admin-notification-dropdown">
+                <div class="notification-header">
+                  <h3>Notificações</h3>
+                  <a href="#">Marcar todas como lidas</a>
+                </div>
+                <ul class="notification-list">
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo pedido recebido</p>
+                        <span>Há 5 minutos</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo cliente registrado</p>
+                        <span>Há 2 horas</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="#">
+                      <div class="notification-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Estoque baixo: Zamioculca</p>
+                        <span>Há 1 dia</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <div class="notification-footer">
+                  <a href="#">Ver todas as notificações</a>
+                </div>
+              </div>
+            </div>
+            <div class="admin-profile">
+              <button class="admin-profile-btn">
+                <img src="../images/admin-avatar.jpg" alt="Admin" />
+                <span>Admin</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="admin-profile-dropdown">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+                  </li>
+                  <li>
+                    <a href="login.html"
+                      ><i class="fas fa-sign-out-alt"></i> Sair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Products Content -->
+        <div class="admin-content">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>Lista de Produtos</h2>
+              <a
+                href="produto-adicionar.html"
+                class="admin-btn admin-btn-primary"
+              >
+                <i class="fas fa-plus"></i> Adicionar Produto
+              </a>
+            </div>
+            <div class="admin-card-body">
+              <div class="admin-filters">
+                <div class="admin-filter-group">
+                  <select id="categoryFilter">
+                    <option value="">Todas as Categorias</option>
+                    <option value="interior">Plantas de Interior</option>
+                    <option value="exterior">Plantas de Exterior</option>
+                    <option value="suculentas">Suculentas</option>
+                    <option value="cactos">Cactos</option>
+                    <option value="flores">Flores</option>
+                  </select>
+                </div>
+                <div class="admin-filter-group">
+                  <select id="statusFilter">
+                    <option value="">Todos os Status</option>
+                    <option value="instock">Em Estoque</option>
+                    <option value="lowstock">Estoque Baixo</option>
+                    <option value="outofstock">Fora de Estoque</option>
+                  </select>
+                </div>
+                <div class="admin-filter-group">
+                  <select id="sortFilter">
+                    <option value="newest">Mais Recentes</option>
+                    <option value="oldest">Mais Antigos</option>
+                    <option value="name-asc">Nome (A-Z)</option>
+                    <option value="name-desc">Nome (Z-A)</option>
+                    <option value="price-asc">Preço (Menor-Maior)</option>
+                    <option value="price-desc">Preço (Maior-Menor)</option>
+                  </select>
+                </div>
+                <button class="admin-btn admin-btn-secondary" id="filterButton">
+                  <i class="fas fa-filter"></i> Filtrar
+                </button>
+              </div>
+
+              <div class="admin-table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <input type="checkbox" id="selectAll" />
+                      </th>
+                      <th>Imagem</th>
+                      <th>Nome</th>
+                      <th>Categoria</th>
+                      <th>Preço</th>
+                      <th>Estoque</th>
+                      <th>Status</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          class="product-checkbox"
+                          data-id="1"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src="../images/products/planta1.jpg"
+                          alt="Zamioculca"
+                          class="product-thumbnail"
+                        />
+                      </td>
+                      <td>Zamioculca</td>
+                      <td>Planta de Interior</td>
+                      <td>R$ 89,90</td>
+                      <td>15</td>
+                      <td>
+                        <span class="status-badge instock">Em Estoque</span>
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <a
+                            href="produto-editar.html?id=1"
+                            class="action-btn edit-btn"
+                            title="Editar"
+                          >
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <button
+                            class="action-btn delete-btn"
+                            title="Excluir"
+                            data-id="1"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                          <button
+                            class="action-btn view-btn"
+                            title="Visualizar"
+                            data-id="1"
+                          >
+                            <i class="fas fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          class="product-checkbox"
+                          data-id="2"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src="../images/products/planta2.jpg"
+                          alt="Espada de São Jorge"
+                          class="product-thumbnail"
+                        />
+                      </td>
+                      <td>Espada de São Jorge</td>
+                      <td>Planta de Interior</td>
+                      <td>R$ 64,50</td>
+                      <td>23</td>
+                      <td>
+                        <span class="status-badge instock">Em Estoque</span>
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <a
+                            href="produto-editar.html?id=2"
+                            class="action-btn edit-btn"
+                            title="Editar"
+                          >
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <button
+                            class="action-btn delete-btn"
+                            title="Excluir"
+                            data-id="2"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                          <button
+                            class="action-btn view-btn"
+                            title="Visualizar"
+                            data-id="2"
+                          >
+                            <i class="fas fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          class="product-checkbox"
+                          data-id="3"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src="../images/products/planta3.jpg"
+                          alt="Suculenta Echeveria"
+                          class="product-thumbnail"
+                        />
+                      </td>
+                      <td>Suculenta Echeveria</td>
+                      <td>Suculenta</td>
+                      <td>R$ 29,90</td>
+                      <td>42</td>
+                      <td>
+                        <span class="status-badge instock">Em Estoque</span>
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <a
+                            href="produto-editar.html?id=3"
+                            class="action-btn edit-btn"
+                            title="Editar"
+                          >
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <button
+                            class="action-btn delete-btn"
+                            title="Excluir"
+                            data-id="3"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                          <button
+                            class="action-btn view-btn"
+                            title="Visualizar"
+                            data-id="3"
+                          >
+                            <i class="fas fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          class="product-checkbox"
+                          data-id="4"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src="../images/products/planta4.jpg"
+                          alt="Cacto Mandacaru"
+                          class="product-thumbnail"
+                        />
+                      </td>
+                      <td>Cacto Mandacaru</td>
+                      <td>Cacto</td>
+                      <td>R$ 39,90</td>
+                      <td>18</td>
+                      <td>
+                        <span class="status-badge instock">Em Estoque</span>
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <a
+                            href="produto-editar.html?id=4"
+                            class="action-btn edit-btn"
+                            title="Editar"
+                          >
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <button
+                            class="action-btn delete-btn"
+                            title="Excluir"
+                            data-id="4"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                          <button
+                            class="action-btn view-btn"
+                            title="Visualizar"
+                            data-id="4"
+                          >
+                            <i class="fas fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          class="product-checkbox"
+                          data-id="5"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src="../images/products/planta5.jpg"
+                          alt="Orquídea Phalaenopsis"
+                          class="product-thumbnail"
+                        />
+                      </td>
+                      <td>Orquídea Phalaenopsis</td>
+                      <td>Flor</td>
+                      <td>R$ 96,00</td>
+                      <td>3</td>
+                      <td>
+                        <span class="status-badge lowstock">Estoque Baixo</span>
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <a
+                            href="produto-editar.html?id=5"
+                            class="action-btn edit-btn"
+                            title="Editar"
+                          >
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <button
+                            class="action-btn delete-btn"
+                            title="Excluir"
+                            data-id="5"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                          <button
+                            class="action-btn view-btn"
+                            title="Visualizar"
+                            data-id="5"
+                          >
+                            <i class="fas fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          class="product-checkbox"
+                          data-id="6"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src="../images/products/planta6.jpg"
+                          alt="Costela de Adão"
+                          class="product-thumbnail"
+                        />
+                      </td>
+                      <td>Costela de Adão</td>
+                      <td>Planta de Interior</td>
+                      <td>R$ 79,90</td>
+                      <td>0</td>
+                      <td>
+                        <span class="status-badge outofstock"
+                          >Fora de Estoque</span
+                        >
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <a
+                            href="produto-editar.html?id=6"
+                            class="action-btn edit-btn"
+                            title="Editar"
+                          >
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <button
+                            class="action-btn delete-btn"
+                            title="Excluir"
+                            data-id="6"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                          <button
+                            class="action-btn view-btn"
+                            title="Visualizar"
+                            data-id="6"
+                          >
+                            <i class="fas fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="admin-table-actions">
+                <div class="bulk-actions">
+                  <select id="bulkAction">
+                    <option value="">Ações em Massa</option>
+                    <option value="delete">Excluir Selecionados</option>
+                    <option value="instock">Marcar como Em Estoque</option>
+                    <option value="outofstock">
+                      Marcar como Fora de Estoque
+                    </option>
+                  </select>
+                  <button
+                    class="admin-btn admin-btn-secondary"
+                    id="applyBulkAction"
+                  >
+                    Aplicar
+                  </button>
+                </div>
+                <div class="pagination">
+                  <button class="pagination-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="pagination-btn active">1</button>
+                  <button class="pagination-btn">2</button>
+                  <button class="pagination-btn">3</button>
+                  <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="admin-modal" id="deleteModal">
+      <div class="admin-modal-content">
+        <div class="admin-modal-header">
+          <h3>Confirmar Exclusão</h3>
+          <button class="admin-modal-close">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+          <p>
+            Tem certeza que deseja excluir este produto? Esta ação não pode ser
+            desfeita.
+          </p>
+        </div>
+        <div class="admin-modal-footer">
+          <button class="admin-btn admin-btn-secondary admin-modal-cancel">
+            Cancelar
+          </button>
+          <button class="admin-btn admin-btn-danger" id="confirmDelete">
+            Sim, Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <script>
+      // Toggle sidebar
+      document
+        .getElementById("sidebarToggle")
+        .addEventListener("click", function () {
+          document
+            .querySelector(".admin-container")
+            .classList.toggle("sidebar-collapsed");
+        });
+
+      // Toggle dropdowns
+      const dropdownToggles = document.querySelectorAll(
+        ".admin-notification-btn, .admin-profile-btn"
+      );
+      dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const dropdown = this.nextElementSibling;
+          dropdown.classList.toggle("show");
+
+          // Fechar outros dropdowns
+          dropdownToggles.forEach((otherToggle) => {
+            if (otherToggle !== toggle) {
+              otherToggle.nextElementSibling.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Fechar dropdowns ao clicar fora
+      document.addEventListener("click", function () {
+        document
+          .querySelectorAll(
+            ".admin-notification-dropdown, .admin-profile-dropdown"
+          )
+          .forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+      });
+
+      // Select All Checkbox
+      document
+        .getElementById("selectAll")
+        .addEventListener("change", function () {
+          const checkboxes = document.querySelectorAll(".product-checkbox");
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = this.checked;
+          });
+        });
+
+      // Delete Product
+      let productIdToDelete = null;
+      const deleteModal = document.getElementById("deleteModal");
+      const deleteButtons = document.querySelectorAll(".delete-btn");
+
+      deleteButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          productIdToDelete = this.getAttribute("data-id");
+          deleteModal.classList.add("show");
+        });
+      });
+
+      document
+        .querySelector(".admin-modal-close")
+        .addEventListener("click", function () {
+          deleteModal.classList.remove("show");
+        });
+
+      document
+        .querySelector(".admin-modal-cancel")
+        .addEventListener("click", function () {
+          deleteModal.classList.remove("show");
+        });
+
+      document
+        .getElementById("confirmDelete")
+        .addEventListener("click", function () {
+          // Aqui você faria uma requisição AJAX para excluir o produto
+          console.log(`Produto ${productIdToDelete} excluído`);
+          deleteModal.classList.remove("show");
+
+          // Simulando a exclusão do produto da tabela
+          const row = document
+            .querySelector(`.product-checkbox[data-id="${productIdToDelete}"]`)
+            .closest("tr");
+          row.remove();
+        });
+
+      // Bulk Actions
+      document
+        .getElementById("applyBulkAction")
+        .addEventListener("click", function () {
+          const action = document.getElementById("bulkAction").value;
+          if (!action) return;
+
+          const selectedProducts = [];
+          document
+            .querySelectorAll(".product-checkbox:checked")
+            .forEach((checkbox) => {
+              selectedProducts.push(checkbox.getAttribute("data-id"));
+            });
+
+          if (selectedProducts.length === 0) {
+            alert("Selecione pelo menos um produto");
+            return;
+          }
+
+          if (action === "delete") {
+            if (
+              confirm(
+                `Tem certeza que deseja excluir ${selectedProducts.length} produtos?`
+              )
+            ) {
+              // Aqui você faria uma requisição AJAX para excluir os produtos
+              console.log(`Produtos ${selectedProducts.join(", ")} excluídos`);
+
+              // Simulando a exclusão dos produtos da tabela
+              selectedProducts.forEach((id) => {
+                const row = document
+                  .querySelector(`.product-checkbox[data-id="${id}"]`)
+                  .closest("tr");
+                row.remove();
+              });
+            }
+          } else if (action === "instock" || action === "outofstock") {
+            // Aqui você faria uma requisição AJAX para atualizar o status dos produtos
+            console.log(
+              `Produtos ${selectedProducts.join(", ")} marcados como ${
+                action === "instock" ? "Em Estoque" : "Fora de Estoque"
+              }`
+            );
+
+            // Simulando a atualização do status dos produtos na tabela
+            selectedProducts.forEach((id) => {
+              const statusCell = document
+                .querySelector(`.product-checkbox[data-id="${id}"]`)
+                .closest("tr")
+                .querySelector("td:nth-child(7) .status-badge");
+              statusCell.className = `status-badge ${action}`;
+              statusCell.textContent =
+                action === "instock" ? "Em Estoque" : "Fora de Estoque";
+            });
+          }
+
+          // Desmarcar todos os checkboxes
+          document.getElementById("selectAll").checked = false;
+          document.querySelectorAll(".product-checkbox").forEach((checkbox) => {
+            checkbox.checked = false;
+          });
+        });
+    </script>
+  </body>
+</html>

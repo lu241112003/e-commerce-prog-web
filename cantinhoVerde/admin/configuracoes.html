@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações | Painel Administrativo</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/testeAdmin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="admin-body">
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-logo">
+            <img src="../images/logo.png" alt="Plantas Marketplace" />
+          </div>
+          <button class="admin-sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="admin-user-info">
+          <div class="admin-user-avatar">
+            <img src="../images/admin-avatar.jpg" alt="Admin" />
+          </div>
+          <div class="admin-user-details">
+            <h4 id="adminName">Administrador</h4>
+            <p>Administrador</p>
+          </div>
+        </div>
+        <nav class="admin-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="produtos.html">
+                <i class="fas fa-leaf"></i>
+                <span>Produtos</span>
+              </a>
+            </li>
+            <li>
+              <a href="categorias.html">
+                <i class="fas fa-tags"></i>
+                <span>Categorias</span>
+              </a>
+            </li>
+            <li>
+              <a href="pedidos.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Pedidos</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientes.html">
+                <i class="fas fa-users"></i>
+                <span>Clientes</span>
+              </a>
+            </li>
+            <li>
+              <a href="relatorios.html">
+                <i class="fas fa-chart-bar"></i>
+                <span>Relatórios</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i>
+                <span>Configurações</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="admin-sidebar-footer">
+          <a href="#" class="admin-logout" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+          <div class="admin-header-left">
+            <h1>Configurações</h1>
+            <nav class="admin-breadcrumb">
+              <a href="dashboard.html">Home</a> / <span>Configurações</span>
+            </nav>
+          </div>
+          <div class="admin-header-right">
+            <div class="admin-notifications">
+              <button class="admin-notification-btn">
+                <i class="far fa-bell"></i>
+                <span class="notification-badge">3</span>
+              </button>
+              <div class="admin-notification-dropdown">
+                <div class="notification-header">
+                  <h3>Notificações</h3>
+                  <a href="#">Marcar todas como lidas</a>
+                </div>
+                <ul class="notification-list">
+                  <li class="unread">
+                    <a href="pedidos.html">
+                      <div class="notification-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo pedido recebido</p>
+                        <span>Há 5 minutos</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="clientes.html">
+                      <div class="notification-icon">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Novo cliente registrado</p>
+                        <span>Há 2 horas</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="unread">
+                    <a href="produtos.html">
+                      <div class="notification-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </div>
+                      <div class="notification-content">
+                        <p>Estoque baixo: Zamioculca</p>
+                        <span>Há 1 dia</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <div class="notification-footer">
+                  <a href="#">Ver todas as notificações</a>
+                </div>
+              </div>
+            </div>
+            <div class="admin-profile">
+              <button class="admin-profile-btn">
+                <img src="../images/admin-avatar.jpg" alt="Admin" />
+                <span id="headerAdminName">Admin</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="admin-profile-dropdown">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                  </li>
+                  <li>
+                    <a href="configuracoes.html"
+                      ><i class="fas fa-cog"></i> Configurações</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" id="headerLogoutBtn"
+                      ><i class="fas fa-sign-out-alt"></i> Sair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Settings Content -->
+        <div class="admin-content">
+          <div class="settings-layout">
+            <div class="settings-sidebar">
+              <ul class="settings-nav">
+                <li class="active">
+                  <a href="#general" data-tab="general">Geral</a>
+                </li>
+                <li><a href="#store" data-tab="store">Loja</a></li>
+                <li><a href="#shipping" data-tab="shipping">Envio</a></li>
+                <li><a href="#payment" data-tab="payment">Pagamento</a></li>
+                <li><a href="#email" data-tab="email">Email</a></li>
+                <li><a href="#users" data-tab="users">Usuários</a></li>
+                <li><a href="#backup" data-tab="backup">Backup</a></li>
+                <li><a href="#logs" data-tab="logs">Logs</a></li>
+              </ul>
+            </div>
+            <div class="settings-content">
+              <div class="settings-tab active" id="general-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Configurações Gerais</h2>
+                  </div>
+                  <div class="admin-card-body">
+                    <form id="generalSettingsForm" class="admin-form">
+                      <div class="form-group">
+                        <label for="siteName">Nome do Site</label>
+                        <input
+                          type="text"
+                          id="siteName"
+                          name="siteName"
+                          value="Plantas Marketplace"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="siteDescription">Descrição do Site</label>
+                        <textarea
+                          id="siteDescription"
+                          name="siteDescription"
+                          rows="3"
+                        >
+Loja especializada em plantas ornamentais, suculentas, cactos e acessórios para jardinagem.</textarea
+                        >
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="contactEmail">Email de Contato</label>
+                          <input
+                            type="email"
+                            id="contactEmail"
+                            name="contactEmail"
+                            value="contato@plantasmarketplace.com"
+                          />
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="contactPhone">Telefone de Contato</label>
+                          <input
+                            type="text"
+                            id="contactPhone"
+                            name="contactPhone"
+                            value="(11) 99999-9999"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Endereço</label>
+                        <input
+                          type="text"
+                          id="address"
+                          name="address"
+                          value="Av. das Plantas, 123 - Jardim Botânico"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Logo do Site</label>
+                        <div class="logo-uploader">
+                          <div class="current-logo">
+                            <img src="../images/logo.png" alt="Logo Atual" />
+                          </div>
+                          <div class="logo-upload">
+                            <input
+                              type="file"
+                              id="logoFile"
+                              name="logoFile"
+                              accept="image/*"
+                            />
+                            <button
+                              type="button"
+                              class="admin-btn admin-btn-secondary"
+                              id="uploadLogoBtn"
+                            >
+                              Alterar Logo
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Favicon</label>
+                        <div class="favicon-uploader">
+                          <div class="current-favicon">
+                            <img
+                              src="../images/favicon.ico"
+                              alt="Favicon Atual"
+                            />
+                          </div>
+                          <div class="favicon-upload">
+                            <input
+                              type="file"
+                              id="faviconFile"
+                              name="faviconFile"
+                              accept="image/x-icon,image/png"
+                            />
+                            <button
+                              type="button"
+                              class="admin-btn admin-btn-secondary"
+                              id="uploadFaviconBtn"
+                            >
+                              Alterar Favicon
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <button
+                          type="submit"
+                          class="admin-btn admin-btn-primary"
+                        >
+                          Salvar Alterações
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="store-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Configurações da Loja</h2>
+                  </div>
+                  <div class="admin-card-body">
+                    <form id="storeSettingsForm" class="admin-form">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="currency">Moeda</label>
+                          <select id="currency" name="currency">
+                            <option value="BRL" selected>
+                              Real Brasileiro (R$)
+                            </option>
+                            <option value="USD">Dólar Americano ($)</option>
+                            <option value="EUR">Euro (€)</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="currencyPosition"
+                            >Posição do Símbolo</label
+                          >
+                          <select id="currencyPosition" name="currencyPosition">
+                            <option value="before">
+                              Antes do Valor (R$ 99,90)
+                            </option>
+                            <option value="after">
+                              Depois do Valor (99,90 R$)
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="thousandSeparator"
+                            >Separador de Milhar</label
+                          >
+                          <select
+                            id="thousandSeparator"
+                            name="thousandSeparator"
+                          >
+                            <option value="." selected>Ponto (.)</option>
+                            <option value=",">Vírgula (,)</option>
+                            <option value=" ">Espaço ( )</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="decimalSeparator"
+                            >Separador Decimal</label
+                          >
+                          <select id="decimalSeparator" name="decimalSeparator">
+                            <option value=".">Ponto (.)</option>
+                            <option value="," selected>Vírgula (,)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="decimalPlaces">Casas Decimais</label>
+                          <select id="decimalPlaces" name="decimalPlaces">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="weightUnit">Unidade de Peso</label>
+                          <select id="weightUnit" name="weightUnit">
+                            <option value="kg" selected>Quilograma (kg)</option>
+                            <option value="g">Grama (g)</option>
+                            <option value="lb">Libra (lb)</option>
+                            <option value="oz">Onça (oz)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="dimensionUnit">Unidade de Dimensão</label>
+                          <select id="dimensionUnit" name="dimensionUnit">
+                            <option value="cm" selected>Centímetro (cm)</option>
+                            <option value="m">Metro (m)</option>
+                            <option value="mm">Milímetro (mm)</option>
+                            <option value="in">Polegada (in)</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="productsPerPage"
+                            >Produtos por Página</label
+                          >
+                          <input
+                            type="number"
+                            id="productsPerPage"
+                            name="productsPerPage"
+                            value="12"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Status da Loja</label>
+                        <div class="toggle-switch">
+                          <input
+                            type="checkbox"
+                            id="storeStatus"
+                            name="storeStatus"
+                            checked
+                          />
+                          <label for="storeStatus"></label>
+                          <span class="toggle-label">Loja Aberta</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="maintenanceMessage"
+                          >Mensagem de Manutenção</label
+                        >
+                        <textarea
+                          id="maintenanceMessage"
+                          name="maintenanceMessage"
+                          rows="3"
+                        >
+Nossa loja está temporariamente fechada para manutenção. Por favor, volte em breve.</textarea
+                        >
+                      </div>
+                      <div class="form-actions">
+                        <button
+                          type="submit"
+                          class="admin-btn admin-btn-primary"
+                        >
+                          Salvar Alterações
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="shipping-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Configurações de Envio</h2>
+                  </div>
+                  <div class="admin-card-body">
+                    <form id="shippingSettingsForm" class="admin-form">
+                      <div class="form-group">
+                        <label>Métodos de Envio Disponíveis</label>
+                        <div class="checkbox-group">
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="shippingMethods[]"
+                              value="correios"
+                              checked
+                            />
+                            Correios</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="shippingMethods[]"
+                              value="jadlog"
+                              checked
+                            />
+                            Jadlog</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="shippingMethods[]"
+                              value="transportadora"
+                            />
+                            Transportadora</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="shippingMethods[]"
+                              value="retirada"
+                              checked
+                            />
+                            Retirada na Loja</label
+                          >
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="freeShippingMinimum"
+                            >Valor Mínimo para Frete Grátis</label
+                          >
+                          <input
+                            type="number"
+                            id="freeShippingMinimum"
+                            name="freeShippingMinimum"
+                            value="150"
+                            min="0"
+                            step="0.01"
+                          />
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="defaultShippingFee"
+                            >Taxa de Envio Padrão</label
+                          >
+                          <input
+                            type="number"
+                            id="defaultShippingFee"
+                            name="defaultShippingFee"
+                            value="15"
+                            min="0"
+                            step="0.01"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Frete Grátis Ativo</label>
+                        <div class="toggle-switch">
+                          <input
+                            type="checkbox"
+                            id="freeShippingEnabled"
+                            name="freeShippingEnabled"
+                            checked
+                          />
+                          <label for="freeShippingEnabled"></label>
+                          <span class="toggle-label">Ativado</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="shippingOriginZipcode">CEP de Origem</label>
+                        <input
+                          type="text"
+                          id="shippingOriginZipcode"
+                          name="shippingOriginZipcode"
+                          value="01234-567"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="correiosCredentials"
+                          >Credenciais dos Correios</label
+                        >
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input
+                              type="text"
+                              id="correiosUser"
+                              name="correiosUser"
+                              placeholder="Usuário"
+                              value="usuario_correios"
+                            />
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input
+                              type="password"
+                              id="correiosPassword"
+                              name="correiosPassword"
+                              placeholder="Senha"
+                              value="senha_correios"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <button
+                          type="submit"
+                          class="admin-btn admin-btn-primary"
+                        >
+                          Salvar Alterações
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="payment-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Configurações de Pagamento</h2>
+                  </div>
+                  <div class="admin-card-body">
+                    <form id="paymentSettingsForm" class="admin-form">
+                      <div class="form-group">
+                        <label>Métodos de Pagamento Disponíveis</label>
+                        <div class="checkbox-group">
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="paymentMethods[]"
+                              value="credit_card"
+                              checked
+                            />
+                            Cartão de Crédito</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="paymentMethods[]"
+                              value="boleto"
+                              checked
+                            />
+                            Boleto</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="paymentMethods[]"
+                              value="pix"
+                              checked
+                            />
+                            PIX</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="paymentMethods[]"
+                              value="bank_transfer"
+                            />
+                            Transferência Bancária</label
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Gateway de Pagamento</label>
+                        <select id="paymentGateway" name="paymentGateway">
+                          <option value="pagseguro" selected>PagSeguro</option>
+                          <option value="mercadopago">Mercado Pago</option>
+                          <option value="paypal">PayPal</option>
+                          <option value="stripe">Stripe</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="pagseguroCredentials"
+                          >Credenciais do PagSeguro</label
+                        >
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input
+                              type="text"
+                              id="pagseguroEmail"
+                              name="pagseguroEmail"
+                              placeholder="Email"
+                              value="email@seudominio.com"
+                            />
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input
+                              type="password"
+                              id="pagseguroToken"
+                              name="pagseguroToken"
+                              placeholder="Token"
+                              value="token_pagseguro"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Ambiente</label>
+                        <div class="radio-group">
+                          <label
+                            ><input
+                              type="radio"
+                              name="paymentEnvironment"
+                              value="sandbox"
+                              checked
+                            />
+                            Sandbox (Testes)</label
+                          >
+                          <label
+                            ><input
+                              type="radio"
+                              name="paymentEnvironment"
+                              value="production"
+                            />
+                            Produção</label
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Parcelamento</label>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="maxInstallments"
+                              >Número Máximo de Parcelas</label
+                            >
+                            <select id="maxInstallments" name="maxInstallments">
+                              <option value="1">1x</option>
+                              <option value="2">2x</option>
+                              <option value="3">3x</option>
+                              <option value="4">4x</option>
+                              <option value="5">5x</option>
+                              <option value="6" selected>6x</option>
+                              <option value="7">7x</option>
+                              <option value="8">8x</option>
+                              <option value="9">9x</option>
+                              <option value="10">10x</option>
+                              <option value="11">11x</option>
+                              <option value="12">12x</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="minInstallmentValue"
+                              >Valor Mínimo da Parcela</label
+                            >
+                            <input
+                              type="number"
+                              id="minInstallmentValue"
+                              name="minInstallmentValue"
+                              value="20"
+                              min="0"
+                              step="0.01"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <button
+                          type="submit"
+                          class="admin-btn admin-btn-primary"
+                        >
+                          Salvar Alterações
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="email-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Configurações de Email</h2>
+                  </div>
+                  <div class="admin-card-body">
+                    <form id="emailSettingsForm" class="admin-form">
+                      <div class="form-group">
+                        <label>Método de Envio</label>
+                        <select id="emailMethod" name="emailMethod">
+                          <option value="smtp" selected>SMTP</option>
+                          <option value="mail">PHP Mail</option>
+                          <option value="sendmail">Sendmail</option>
+                        </select>
+                      </div>
+                      <div id="smtpSettings">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="smtpHost">Servidor SMTP</label>
+                            <input
+                              type="text"
+                              id="smtpHost"
+                              name="smtpHost"
+                              value="smtp.seudominio.com"
+                            />
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="smtpPort">Porta SMTP</label>
+                            <input
+                              type="number"
+                              id="smtpPort"
+                              name="smtpPort"
+                              value="587"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="smtpUser">Usuário SMTP</label>
+                            <input
+                              type="text"
+                              id="smtpUser"
+                              name="smtpUser"
+                              value="email@seudominio.com"
+                            />
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="smtpPassword">Senha SMTP</label>
+                            <input
+                              type="password"
+                              id="smtpPassword"
+                              name="smtpPassword"
+                              value="senha_smtp"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Segurança</label>
+                          <select id="smtpSecurity" name="smtpSecurity">
+                            <option value="none">Nenhuma</option>
+                            <option value="ssl">SSL</option>
+                            <option value="tls" selected>TLS</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="emailFrom">Email de Origem</label>
+                          <input
+                            type="email"
+                            id="emailFrom"
+                            name="emailFrom"
+                            value="contato@plantasmarketplace.com"
+                          />
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="emailFromName">Nome de Origem</label>
+                          <input
+                            type="text"
+                            id="emailFromName"
+                            name="emailFromName"
+                            value="Plantas Marketplace"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Enviar Cópia para Administrador</label>
+                        <div class="toggle-switch">
+                          <input
+                            type="checkbox"
+                            id="emailCopyAdmin"
+                            name="emailCopyAdmin"
+                            checked
+                          />
+                          <label for="emailCopyAdmin"></label>
+                          <span class="toggle-label">Ativado</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="testEmail">Enviar Email de Teste</label>
+                        <div class="input-group">
+                          <input
+                            type="email"
+                            id="testEmail"
+                            name="testEmail"
+                            placeholder="Digite um email para teste"
+                          />
+                          <button
+                            type="button"
+                            class="admin-btn admin-btn-secondary"
+                            id="sendTestEmailBtn"
+                          >
+                            Enviar Teste
+                          </button>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <button
+                          type="submit"
+                          class="admin-btn admin-btn-primary"
+                        >
+                          Salvar Alterações
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="users-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Usuários Administrativos</h2>
+                    <button class="admin-btn admin-btn-primary" id="addUserBtn">
+                      <i class="fas fa-plus"></i> Adicionar Usuário
+                    </button>
+                  </div>
+                  <div class="admin-card-body">
+                    <div class="admin-table-responsive">
+                      <table class="admin-table">
+                        <thead>
+                          <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Função</th>
+                            <th>Último Acesso</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Administrador</td>
+                            <td>admin@plantasmarketplace.com</td>
+                            <td>Administrador</td>
+                            <td>15/04/2023 14:30</td>
+                            <td>
+                              <span class="status-badge instock">Ativo</span>
+                            </td>
+                            <td>
+                              <div class="action-buttons">
+                                <button
+                                  class="action-btn edit-btn"
+                                  title="Editar"
+                                  data-id="1"
+                                >
+                                  <i class="fas fa-edit"></i>
+                                </button>
+                                <button
+                                  class="action-btn delete-btn"
+                                  title="Excluir"
+                                  data-id="1"
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Gerente</td>
+                            <td>gerente@plantasmarketplace.com</td>
+                            <td>Gerente</td>
+                            <td>14/04/2023 10:15</td>
+                            <td>
+                              <span class="status-badge instock">Ativo</span>
+                            </td>
+                            <td>
+                              <div class="action-buttons">
+                                <button
+                                  class="action-btn edit-btn"
+                                  title="Editar"
+                                  data-id="2"
+                                >
+                                  <i class="fas fa-edit"></i>
+                                </button>
+                                <button
+                                  class="action-btn delete-btn"
+                                  title="Excluir"
+                                  data-id="2"
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Vendedor</td>
+                            <td>vendedor@plantasmarketplace.com</td>
+                            <td>Vendedor</td>
+                            <td>13/04/2023 16:45</td>
+                            <td>
+                              <span class="status-badge instock">Ativo</span>
+                            </td>
+                            <td>
+                              <div class="action-buttons">
+                                <button
+                                  class="action-btn edit-btn"
+                                  title="Editar"
+                                  data-id="3"
+                                >
+                                  <i class="fas fa-edit"></i>
+                                </button>
+                                <button
+                                  class="action-btn delete-btn"
+                                  title="Excluir"
+                                  data-id="3"
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Suporte</td>
+                            <td>suporte@plantasmarketplace.com</td>
+                            <td>Suporte</td>
+                            <td>10/04/2023 09:30</td>
+                            <td>
+                              <span class="status-badge outofstock"
+                                >Inativo</span
+                              >
+                            </td>
+                            <td>
+                              <div class="action-buttons">
+                                <button
+                                  class="action-btn edit-btn"
+                                  title="Editar"
+                                  data-id="4"
+                                >
+                                  <i class="fas fa-edit"></i>
+                                </button>
+                                <button
+                                  class="action-btn delete-btn"
+                                  title="Excluir"
+                                  data-id="4"
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="backup-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Backup e Restauração</h2>
+                  </div>
+                  <div class="admin-card-body">
+                    <div class="backup-section">
+                      <h3>Criar Backup</h3>
+                      <p>
+                        Crie um backup completo do seu banco de dados e arquivos
+                        do sistema.
+                      </p>
+                      <div class="backup-options">
+                        <div class="form-group">
+                          <label>O que incluir no backup:</label>
+                          <div class="checkbox-group">
+                            <label
+                              ><input
+                                type="checkbox"
+                                name="backupDatabase"
+                                checked
+                              />
+                              Banco de Dados</label
+                            >
+                            <label
+                              ><input
+                                type="checkbox"
+                                name="backupFiles"
+                                checked
+                              />
+                              Arquivos do Sistema</label
+                            >
+                            <label
+                              ><input
+                                type="checkbox"
+                                name="backupImages"
+                                checked
+                              />
+                              Imagens e Uploads</label
+                            >
+                            <label
+                              ><input type="checkbox" name="backupLogs" />
+                              Logs</label
+                            >
+                          </div>
+                        </div>
+                        <button
+                          class="admin-btn admin-btn-primary"
+                          id="createBackupBtn"
+                        >
+                          <i class="fas fa-download"></i> Criar Backup Agora
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="backup-section">
+                      <h3>Backups Automáticos</h3>
+                      <p>
+                        Configure backups automáticos para manter seus dados
+                        seguros.
+                      </p>
+                      <div class="form-group">
+                        <label>Frequência de Backup:</label>
+                        <select id="backupFrequency" name="backupFrequency">
+                          <option value="daily">Diário</option>
+                          <option value="weekly" selected>Semanal</option>
+                          <option value="monthly">Mensal</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Horário do Backup:</label>
+                        <input
+                          type="time"
+                          id="backupTime"
+                          name="backupTime"
+                          value="03:00"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Número de Backups a Manter:</label>
+                        <input
+                          type="number"
+                          id="backupRetention"
+                          name="backupRetention"
+                          value="5"
+                          min="1"
+                          max="30"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Armazenamento de Backup:</label>
+                        <select id="backupStorage" name="backupStorage">
+                          <option value="local" selected>Servidor Local</option>
+                          <option value="ftp">FTP Remoto</option>
+                          <option value="cloud">Armazenamento em Nuvem</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Notificar por Email:</label>
+                        <div class="toggle-switch">
+                          <input
+                            type="checkbox"
+                            id="backupNotify"
+                            name="backupNotify"
+                            checked
+                          />
+                          <label for="backupNotify"></label>
+                          <span class="toggle-label">Ativado</span>
+                        </div>
+                      </div>
+                      <button
+                        class="admin-btn admin-btn-primary"
+                        id="saveBackupSettingsBtn"
+                      >
+                        <i class="fas fa-save"></i> Salvar Configurações
+                      </button>
+                    </div>
+
+                    <div class="backup-section">
+                      <h3>Backups Disponíveis</h3>
+                      <div class="admin-table-responsive">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Nome do Arquivo</th>
+                              <th>Data</th>
+                              <th>Tamanho</th>
+                              <th>Tipo</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>backup_20230415_030000.zip</td>
+                              <td>15/04/2023 03:00</td>
+                              <td>25.4 MB</td>
+                              <td>Completo</td>
+                              <td>
+                                <div class="action-buttons">
+                                  <button
+                                    class="action-btn download-btn"
+                                    title="Download"
+                                  >
+                                    <i class="fas fa-download"></i>
+                                  </button>
+                                  <button
+                                    class="action-btn restore-btn"
+                                    title="Restaurar"
+                                  >
+                                    <i class="fas fa-undo"></i>
+                                  </button>
+                                  <button
+                                    class="action-btn delete-btn"
+                                    title="Excluir"
+                                  >
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>backup_20230408_030000.zip</td>
+                              <td>08/04/2023 03:00</td>
+                              <td>24.8 MB</td>
+                              <td>Completo</td>
+                              <td>
+                                <div class="action-buttons">
+                                  <button
+                                    class="action-btn download-btn"
+                                    title="Download"
+                                  >
+                                    <i class="fas fa-download"></i>
+                                  </button>
+                                  <button
+                                    class="action-btn restore-btn"
+                                    title="Restaurar"
+                                  >
+                                    <i class="fas fa-undo"></i>
+                                  </button>
+                                  <button
+                                    class="action-btn delete-btn"
+                                    title="Excluir"
+                                  >
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>backup_20230401_030000.zip</td>
+                              <td>01/04/2023 03:00</td>
+                              <td>23.9 MB</td>
+                              <td>Completo</td>
+                              <td>
+                                <div class="action-buttons">
+                                  <button
+                                    class="action-btn download-btn"
+                                    title="Download"
+                                  >
+                                    <i class="fas fa-download"></i>
+                                  </button>
+                                  <button
+                                    class="action-btn restore-btn"
+                                    title="Restaurar"
+                                  >
+                                    <i class="fas fa-undo"></i>
+                                  </button>
+                                  <button
+                                    class="action-btn delete-btn"
+                                    title="Excluir"
+                                  >
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="backup-section">
+                      <h3>Restaurar Backup</h3>
+                      <p>
+                        Faça upload de um arquivo de backup para restaurar o
+                        sistema.
+                      </p>
+                      <div class="form-group">
+                        <label>Arquivo de Backup:</label>
+                        <input
+                          type="file"
+                          id="restoreFile"
+                          name="restoreFile"
+                          accept=".zip,.sql"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Opções de Restauração:</label>
+                        <div class="checkbox-group">
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="restoreDatabase"
+                              checked
+                            />
+                            Restaurar Banco de Dados</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="restoreFiles"
+                              checked
+                            />
+                            Restaurar Arquivos do Sistema</label
+                          >
+                          <label
+                            ><input
+                              type="checkbox"
+                              name="restoreImages"
+                              checked
+                            />
+                            Restaurar Imagens e Uploads</label
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="alert alert-warning">
+                          <i class="fas fa-exclamation-triangle"></i> Atenção: A
+                          restauração substituirá todos os dados atuais.
+                          Certifique-se de fazer um backup antes de prosseguir.
+                        </div>
+                      </div>
+                      <button
+                        class="admin-btn admin-btn-danger"
+                        id="restoreBackupBtn"
+                      >
+                        <i class="fas fa-undo"></i> Restaurar Backup
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="settings-tab" id="logs-tab">
+                <div class="admin-card">
+                  <div class="admin-card-header">
+                    <h2>Logs do Sistema</h2>
+                    <div class="log-actions">
+                      <button
+                        class="admin-btn admin-btn-secondary"
+                        id="refreshLogsBtn"
+                      >
+                        <i class="fas fa-sync-alt"></i> Atualizar
+                      </button>
+                      <button
+                        class="admin-btn admin-btn-danger"
+                        id="clearLogsBtn"
+                      >
+                        <i class="fas fa-trash-alt"></i> Limpar Logs
+                      </button>
+                    </div>
+                  </div>
+                  <div class="admin-card-body">
+                    <div class="log-filters">
+                      <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="logType">Tipo de Log:</label>
+                          <select id="logType" name="logType">
+                            <option value="all" selected>Todos</option>
+                            <option value="error">Erros</option>
+                            <option value="warning">Avisos</option>
+                            <option value="info">Informações</option>
+                            <option value="debug">Debug</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="logModule">Módulo:</label>
+                          <select id="logModule" name="logModule">
+                            <option value="all" selected>Todos</option>
+                            <option value="system">Sistema</option>
+                            <option value="orders">Pedidos</option>
+                            <option value="products">Produtos</option>
+                            <option value="users">Usuários</option>
+                            <option value="payments">Pagamentos</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="logDateFrom">Data Inicial:</label>
+                          <input
+                            type="date"
+                            id="logDateFrom"
+                            name="logDateFrom"
+                          />
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="logDateTo">Data Final:</label>
+                          <input type="date" id="logDateTo" name="logDateTo" />
+                        </div>
+                      </div>
+                      <button
+                        class="admin-btn admin-btn-secondary"
+                        id="filterLogsBtn"
+                      >
+                        <i class="fas fa-filter"></i> Filtrar
+                      </button>
+                    </div>
+
+                    <div class="admin-table-responsive">
+                      <table class="admin-table">
+                        <thead>
+                          <tr>
+                            <th>Data/Hora</th>
+                            <th>Tipo</th>
+                            <th>Módulo</th>
+                            <th>Usuário</th>
+                            <th>IP</th>
+                            <th>Mensagem</th>
+                            <th>Ações</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>15/04/2023 14:30:45</td>
+                            <td><span class="log-badge error">Erro</span></td>
+                            <td>Pagamentos</td>
+                            <td>admin@plantasmarketplace.com</td>
+                            <td>192.168.1.1</td>
+                            <td>Falha na conexão com o gateway de pagamento</td>
+                            <td>
+                              <button
+                                class="action-btn view-btn"
+                                title="Detalhes"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>15/04/2023 13:15:22</td>
+                            <td>
+                              <span class="log-badge warning">Aviso</span>
+                            </td>
+                            <td>Produtos</td>
+                            <td>gerente@plantasmarketplace.com</td>
+                            <td>192.168.1.2</td>
+                            <td>Estoque baixo: Produto ID 25 (Zamioculca)</td>
+                            <td>
+                              <button
+                                class="action-btn view-btn"
+                                title="Detalhes"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>15/04/2023 12:05:10</td>
+                            <td><span class="log-badge info">Info</span></td>
+                            <td>Pedidos</td>
+                            <td>Sistema</td>
+                            <td>127.0.0.1</td>
+                            <td>Pedido #ORD-0025 criado com sucesso</td>
+                            <td>
+                              <button
+                                class="action-btn view-btn"
+                                title="Detalhes"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>15/04/2023 10:45:33</td>
+                            <td><span class="log-badge info">Info</span></td>
+                            <td>Usuários</td>
+                            <td>Sistema</td>
+                            <td>192.168.1.5</td>
+                            <td>
+                              Novo usuário registrado: maria.silva@email.com
+                            </td>
+                            <td>
+                              <button
+                                class="action-btn view-btn"
+                                title="Detalhes"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>15/04/2023 09:30:15</td>
+                            <td><span class="log-badge debug">Debug</span></td>
+                            <td>Sistema</td>
+                            <td>Sistema</td>
+                            <td>127.0.0.1</td>
+                            <td>Backup automático iniciado</td>
+                            <td>
+                              <button
+                                class="action-btn view-btn"
+                                title="Detalhes"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="pagination">
+                      <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                      </button>
+                      <button class="pagination-btn active">1</button>
+                      <button class="pagination-btn">2</button>
+                      <button class="pagination-btn">3</button>
+                      <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Add/Edit User Modal -->
+    <div class="admin-modal" id="userModal">
+      <div class="admin-modal-content">
+        <div class="admin-modal-header">
+          <h3 id="userModalTitle">Adicionar Usuário</h3>
+          <button class="admin-modal-close">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+          <form id="userForm" class="admin-form">
+            <input type="hidden" id="userId" value="" />
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="userName">Nome*</label>
+                <input type="text" id="userName" name="userName" required />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="userEmail">Email*</label>
+                <input type="email" id="userEmail" name="userEmail" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="userPassword">Senha*</label>
+                <input
+                  type="password"
+                  id="userPassword"
+                  name="userPassword"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="userPasswordConfirm">Confirmar Senha*</label>
+                <input
+                  type="password"
+                  id="userPasswordConfirm"
+                  name="userPasswordConfirm"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userRole">Função*</label>
+              <select id="userRole" name="userRole" required>
+                <option value="">Selecione uma função</option>
+                <option value="admin">Administrador</option>
+                <option value="manager">Gerente</option>
+                <option value="sales">Vendedor</option>
+                <option value="support">Suporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <div class="toggle-switch">
+                <input
+                  type="checkbox"
+                  id="userStatus"
+                  name="userStatus"
+                  checked
+                />
+                <label for="userStatus"></label>
+                <span class="toggle-label">Ativo</span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="admin-modal-footer">
+          <button class="admin-btn admin-btn-secondary admin-modal-cancel">
+            Cancelar
+          </button>
+          <button class="admin-btn admin-btn-primary" id="saveUserBtn">
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="admin-modal" id="deleteModal">
+      <div class="admin-modal-content">
+        <div class="admin-modal-header">
+          <h3>Confirmar Exclusão</h3>
+          <button class="admin-modal-close">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+          <p>
+            Tem certeza que deseja excluir este item? Esta ação não pode ser
+            desfeita.
+          </p>
+        </div>
+        <div class="admin-modal-footer">
+          <button class="admin-btn admin-btn-secondary admin-modal-cancel">
+            Cancelar
+          </button>
+          <button class="admin-btn admin-btn-danger" id="confirmDelete">
+            Sim, Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Log Details Modal -->
+    <div class="admin-modal" id="logDetailsModal">
+      <div class="admin-modal-content">
+        <div class="admin-modal-header">
+          <h3>Detalhes do Log</h3>
+          <button class="admin-modal-close">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+          <div class="log-details">
+            <div class="log-detail-item">
+              <span class="label">Data/Hora:</span>
+              <span class="value" id="logDetailDateTime"
+                >15/04/2023 14:30:45</span
+              >
+            </div>
+            <div class="log-detail-item">
+              <span class="label">Tipo:</span>
+              <span class="value" id="logDetailType">Erro</span>
+            </div>
+            <div class="log-detail-item">
+              <span class="label">Módulo:</span>
+              <span class="value" id="logDetailModule">Pagamentos</span>
+            </div>
+            <div class="log-detail-item">
+              <span class="label">Usuário:</span>
+              <span class="value" id="logDetailUser"
+                >admin@plantasmarketplace.com</span
+              >
+            </div>
+            <div class="log-detail-item">
+              <span class="label">IP:</span>
+              <span class="value" id="logDetailIP">192.168.1.1</span>
+            </div>
+            <div class="log-detail-item">
+              <span class="label">URL:</span>
+              <span class="value" id="logDetailURL">/admin/pagamentos.php</span>
+            </div>
+            <div class="log-detail-item">
+              <span class="label">Mensagem:</span>
+              <span class="value" id="logDetailMessage"
+                >Falha na conexão com o gateway de pagamento</span
+              >
+            </div>
+            <div class="log-detail-item">
+              <span class="label">Detalhes:</span>
+              <pre id="logDetailDetails">
+{
+    "error_code": "CONNECTION_ERROR",
+    "gateway": "pagseguro",
+    "request_id": "pay_123456789",
+    "response": {
+        "status": 500,
+        "message": "Could not connect to payment gateway. Timeout after 30 seconds."
+    }
+}
+                        </pre
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Verificar se o usuário está logado
+        const isLoggedIn = localStorage.getItem("adminLoggedIn");
+        if (!isLoggedIn) {
+          window.location.href = "login.html";
+          return;
+        }
+
+        // Atualizar nome do administrador
+        const adminName = localStorage.getItem("adminName") || "Administrador";
+        document.getElementById("adminName").textContent = adminName;
+        document.getElementById("headerAdminName").textContent = adminName;
+
+        // Toggle sidebar
+        document
+          .getElementById("sidebarToggle")
+          .addEventListener("click", function () {
+            document
+              .querySelector(".admin-container")
+              .classList.toggle("sidebar-collapsed");
+          });
+
+        // Toggle dropdowns
+        const dropdownToggles = document.querySelectorAll(
+          ".admin-notification-btn, .admin-profile-btn"
+        );
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const dropdown = this.nextElementSibling;
+            dropdown.classList.toggle("show");
+
+            // Fechar outros dropdowns
+            dropdownToggles.forEach((otherToggle) => {
+              if (otherToggle !== toggle) {
+                otherToggle.nextElementSibling.classList.remove("show");
+              }
+            });
+          });
+        });
+
+        // Fechar dropdowns ao clicar fora
+        document.addEventListener("click", function () {
+          document
+            .querySelectorAll(
+              ".admin-notification-dropdown, .admin-profile-dropdown"
+            )
+            .forEach((dropdown) => {
+              dropdown.classList.remove("show");
+            });
+        });
+
+        // Logout
+        document
+          .getElementById("logoutBtn")
+          .addEventListener("click", handleLogout);
+        document
+          .getElementById("headerLogoutBtn")
+          .addEventListener("click", handleLogout);
+
+        function handleLogout(e) {
+          e.preventDefault();
+          localStorage.removeItem("adminLoggedIn");
+          localStorage.removeItem("adminName");
+          window.location.href = "login.html";
+        }
+
+        // Navegação entre abas de configurações
+        const settingsNavLinks = document.querySelectorAll(".settings-nav a");
+        settingsNavLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remover classe active de todos os links e abas
+            document.querySelectorAll(".settings-nav li").forEach((item) => {
+              item.classList.remove("active");
+            });
+            document.querySelectorAll(".settings-tab").forEach((tab) => {
+              tab.classList.remove("active");
+            });
+
+            // Adicionar classe active ao link clicado e à aba correspondente
+            this.parentElement.classList.add("active");
+            const tabId = this.getAttribute("data-tab");
+            document.getElementById(`${tabId}-tab`).classList.add("active");
+          });
+        });
+
+        // Formulários de configurações
+        const settingsForms = document.querySelectorAll(".admin-form");
+        settingsForms.forEach((form) => {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Em um ambiente real, você faria uma requisição AJAX para salvar as configurações
+            alert("Configurações salvas com sucesso!");
+          });
+        });
+
+        // Modais
+        const modals = document.querySelectorAll(".admin-modal");
+        const closeButtons = document.querySelectorAll(
+          ".admin-modal-close, .admin-modal-cancel"
+        );
+        closeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            modals.forEach((modal) => {
+              modal.classList.remove("show");
+            });
+          });
+        });
+
+        // Adicionar Usuário
+        const userModal = document.getElementById("userModal");
+        const userForm = document.getElementById("userForm");
+        const userModalTitle = document.getElementById("userModalTitle");
+
+        document
+          .getElementById("addUserBtn")
+          .addEventListener("click", function () {
+            userModalTitle.textContent = "Adicionar Usuário";
+            userForm.reset();
+            document.getElementById("userId").value = "";
+            userModal.classList.add("show");
+          });
+
+        // Editar Usuário
+        const editButtons = document.querySelectorAll(".edit-btn");
+        editButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const userId = this.getAttribute("data-id");
+            userModalTitle.textContent = "Editar Usuário";
+
+            // Simulação de carregamento de dados (em um ambiente real, você faria uma requisição AJAX)
+            const users = {
+              1: {
+                name: "Administrador",
+                email: "admin@plantasmarketplace.com",
+                role: "admin",
+                status: true,
+              },
+              2: {
+                name: "Gerente",
+                email: "gerente@plantasmarketplace.com",
+                role: "manager",
+                status: true,
+              },
+              3: {
+                name: "Vendedor",
+                email: "vendedor@plantasmarketplace.com",
+                role: "sales",
+                status: true,
+              },
+              4: {
+                name: "Suporte",
+                email: "suporte@plantasmarketplace.com",
+                role: "support",
+                status: false,
+              },
+            };
+
+            const user = users[userId];
+
+            document.getElementById("userId").value = userId;
+            document.getElementById("userName").value = user.name;
+            document.getElementById("userEmail").value = user.email;
+            document.getElementById("userPassword").value = "********";
+            document.getElementById("userPasswordConfirm").value = "********";
+            document.getElementById("userRole").value = user.role;
+            document.getElementById("userStatus").checked = user.status;
+
+            userModal.classList.add("show");
+          });
+        });
+
+        // Salvar Usuário
+        document
+          .getElementById("saveUserBtn")
+          .addEventListener("click", function () {
+            if (!userForm.checkValidity()) {
+              userForm.reportValidity();
+              return;
+            }
+
+            // Verificar se as senhas coincidem
+            const password = document.getElementById("userPassword").value;
+            const passwordConfirm = document.getElementById(
+              "userPasswordConfirm"
+            ).value;
+
+            if (password !== passwordConfirm) {
+              alert("As senhas não coincidem!");
+              return;
+            }
+
+            // Em um ambiente real, você faria uma requisição AJAX para salvar o usuário
+            alert("Usuário salvo com sucesso!");
+            userModal.classList.remove("show");
+          });
+
+        // Excluir Usuário
+        const deleteModal = document.getElementById("deleteModal");
+        let itemIdToDelete = null;
+        let itemTypeToDelete = null;
+
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        deleteButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            itemIdToDelete = this.getAttribute("data-id");
+            itemTypeToDelete = "user";
+            deleteModal.classList.add("show");
+          });
+        });
+
+        document
+          .getElementById("confirmDelete")
+          .addEventListener("click", function () {
+            // Em um ambiente real, você faria uma requisição AJAX para excluir o item
+            if (itemTypeToDelete === "user") {
+              alert(`Usuário ${itemIdToDelete} excluído com sucesso!`);
+              // Simulando a remoção da linha da tabela
+              const row = document
+                .querySelector(`.edit-btn[data-id="${itemIdToDelete}"]`)
+                .closest("tr");
+              row.remove();
+            } else if (itemTypeToDelete === "backup") {
+              alert(`Backup excluído com sucesso!`);
+              // Simulando a remoção da linha da tabela
+              const row = document
+                .querySelector(`.delete-btn[data-id="${itemIdToDelete}"]`)
+                .closest("tr");
+              row.remove();
+            }
+
+            deleteModal.classList.remove("show");
+          });
+
+        // Enviar Email de Teste
+        document
+          .getElementById("sendTestEmailBtn")
+          .addEventListener("click", function () {
+            const testEmail = document.getElementById("testEmail").value;
+            if (!testEmail) {
+              alert("Por favor, digite um email para teste");
+              return;
+            }
+
+            // Em um ambiente real, você faria uma requisição AJAX para enviar o email de teste
+            alert(`Email de teste enviado para ${testEmail}`);
+          });
+
+        // Criar Backup
+        document
+          .getElementById("createBackupBtn")
+          .addEventListener("click", function () {
+            // Em um ambiente real, você faria uma requisição AJAX para criar o backup
+            alert("Backup criado com sucesso! O download começará em breve.");
+          });
+
+        // Salvar Configurações de Backup
+        document
+          .getElementById("saveBackupSettingsBtn")
+          .addEventListener("click", function () {
+            // Em um ambiente real, você faria uma requisição AJAX para salvar as configurações
+            alert("Configurações de backup salvas com sucesso!");
+          });
+
+        // Restaurar Backup
+        document
+          .getElementById("restoreBackupBtn")
+          .addEventListener("click", function () {
+            const restoreFile = document.getElementById("restoreFile").value;
+            if (!restoreFile) {
+              alert("Por favor, selecione um arquivo de backup para restaurar");
+              return;
+            }
+
+            if (
+              confirm(
+                "Tem certeza que deseja restaurar este backup? Esta ação substituirá todos os dados atuais."
+              )
+            ) {
+              // Em um ambiente real, você faria uma requisição AJAX para restaurar o backup
+              alert(
+                "Backup restaurado com sucesso! O sistema será reiniciado."
+              );
+            }
+          });
+
+        // Filtrar Logs
+        document
+          .getElementById("filterLogsBtn")
+          .addEventListener("click", function () {
+            // Em um ambiente real, você faria uma requisição AJAX para filtrar os logs
+            alert("Logs filtrados com sucesso!");
+          });
+
+        // Atualizar Logs
+        document
+          .getElementById("refreshLogsBtn")
+          .addEventListener("click", function () {
+            // Em um ambiente real, você faria uma requisição AJAX para atualizar os logs
+            alert("Logs atualizados com sucesso!");
+          });
+
+        // Limpar Logs
+        document
+          .getElementById("clearLogsBtn")
+          .addEventListener("click", function () {
+            if (
+              confirm(
+                "Tem certeza que deseja limpar todos os logs? Esta ação não pode ser desfeita."
+              )
+            ) {
+              // Em um ambiente real, você faria uma requisição AJAX para limpar os logs
+              alert("Logs limpos com sucesso!");
+            }
+          });
+
+        // Ver Detalhes do Log
+        const logDetailsModal = document.getElementById("logDetailsModal");
+        const viewLogButtons = document.querySelectorAll(".view-btn");
+
+        viewLogButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Em um ambiente real, você faria uma requisição AJAX para obter os detalhes do log
+            logDetailsModal.classList.add("show");
+          });
+        });
+
+        // Toggle SMTP Settings
+        document
+          .getElementById("emailMethod")
+          .addEventListener("change", function () {
+            const smtpSettings = document.getElementById("smtpSettings");
+            if (this.value === "smtp") {
+              smtpSettings.style.display = "block";
+            } else {
+              smtpSettings.style.display = "none";
+            }
+          });
+
+        // Toggle Store Status Label
+        document
+          .getElementById("storeStatus")
+          .addEventListener("change", function () {
+            const label = this.nextElementSibling.nextElementSibling;
+            if (this.checked) {
+              label.textContent = "Loja Aberta";
+            } else {
+              label.textContent = "Loja Fechada";
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

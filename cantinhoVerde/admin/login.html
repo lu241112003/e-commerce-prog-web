@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Administrativo | Plantas Marketplace</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="admin-body">
+    <div class="admin-login-container">
+      <div class="admin-login-box">
+        <div class="admin-login-logo">
+          <img src="../images/logo.png" alt="Plantas Marketplace" />
+        </div>
+        <h2>Painel Administrativo</h2>
+        <div class="admin-login-message" id="loginMessage"></div>
+        <form
+          id="adminLoginForm"
+          class="admin-login-form"
+          action="dashboard.html"
+          method="post"
+        >
+          <div class="form-group">
+            <label for="username">Email</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="username"
+                name="username"
+                placeholder="Digite seu email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Digite sua senha"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group remember-me">
+            <label>
+              <input type="checkbox" name="remember" /> Lembrar-me
+            </label>
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+          </div>
+          <button type="submit" class="admin-btn admin-btn-primary">
+            Entrar
+          </button>
+        </form>
+        <div class="admin-login-footer">
+          <p>&copy; 2023 Plantas Marketplace. Todos os direitos reservados.</p>
+          <a href="../index.html" class="back-to-site">Voltar para o site</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <script>
+      document
+        .getElementById("adminLoginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const messageDiv = document.getElementById("loginMessage");
+
+          // Simulação de validação (em um ambiente real, isso seria feito no servidor)
+          if (email === "admin@admin.com" && password === "pass") {
+            // Login bem-sucedido
+            messageDiv.innerHTML =
+              '<div class="alert alert-success">Login realizado com sucesso! Redirecionando...</div>';
+
+            // Simular armazenamento de sessão
+            localStorage.setItem("adminLoggedIn", "true");
+            localStorage.setItem("adminName", "Administrador");
+
+            // Redirecionar após um breve delay
+            setTimeout(() => {
+              window.location.href = "dashboard.html";
+            }, 1000);
+          } else {
+            // Login falhou
+            messageDiv.innerHTML =
+              '<div class="alert alert-danger">Email ou senha incorretos. Tente novamente.</div>';
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmação de Pedido | Plantas Marketplace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/confirmacao.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Planta<span>Shop</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="conta.html"><i class="fas fa-user"></i></a>
+          <a href="pesquisa.html"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-section">
+      <div class="container">
+        <div class="confirmation-container">
+          <div class="confirmation-header">
+            <div class="confirmation-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h1 class="confirmation-title">Pedido Confirmado!</h1>
+            <p class="confirmation-message">
+              Obrigado por sua compra. Seu pedido foi recebido e está sendo
+              processado.
+            </p>
+          </div>
+
+          <div class="order-info">
+            <div class="order-info-item">
+              <div class="info-label">Número do Pedido</div>
+              <div class="info-value">#PL12345678</div>
+            </div>
+            <div class="order-info-item">
+              <div class="info-label">Data</div>
+              <div class="info-value">15/06/2023</div>
+            </div>
+            <div class="order-info-item">
+              <div class="info-label">Total</div>
+              <div class="info-value">R$169,80</div>
+            </div>
+            <div class="order-info-item">
+              <div class="info-label">Método de Pagamento</div>
+              <div class="info-value">Cartão de Crédito (final 1234)</div>
+            </div>
+          </div>
+
+          <div class="order-details">
+            <h2 class="section-title">Detalhes do Pedido</h2>
+
+            <div class="order-items">
+              <div class="order-item">
+                <div class="item-image">
+                  <img src="images/products/planta1.jpg" alt="Zamioculca" />
+                </div>
+                <div class="item-details">
+                  <h3 class="item-name">Zamioculca</h3>
+                  <div class="item-variant">Tamanho: M (15cm)</div>
+                </div>
+                <div class="item-quantity">1</div>
+                <div class="item-price">R$89,90</div>
+              </div>
+
+              <div class="order-item">
+                <div class="item-image">
+                  <img
+                    src="images/products/planta6.jpg"
+                    alt="Costela de Adão"
+                  />
+                </div>
+                <div class="item-details">
+                  <h3 class="item-name">Costela de Adão</h3>
+                  <div class="item-variant">Tamanho: P (13cm)</div>
+                </div>
+                <div class="item-quantity">1</div>
+                <div class="item-price">R$79,90</div>
+              </div>
+            </div>
+
+            <div class="order-summary">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span>R$169,80</span>
+              </div>
+              <div class="summary-row">
+                <span>Frete</span>
+                <span>Grátis</span>
+              </div>
+              <div class="summary-row">
+                <span>Desconto</span>
+                <span>R$0,00</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span>R$169,80</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shipping-info">
+            <h2 class="section-title">Informações de Entrega</h2>
+
+            <div class="shipping-details">
+              <div class="shipping-address">
+                <h3>Endereço de Entrega</h3>
+                <p>Ana Silva</p>
+                <p>Rua das Flores, 123, Apto 101</p>
+                <p>Jardim Primavera</p>
+                <p>São Paulo - SP, 01234-567</p>
+                <p>Brasil</p>
+                <p>Telefone: (11) 98765-4321</p>
+              </div>
+
+              <div class="shipping-method">
+                <h3>Método de Envio</h3>
+                <p class="method-name">Entrega Expressa</p>
+                <p class="method-estimate">
+                  Entrega estimada: 18/06/2023 - 20/06/2023
+                </p>
+                <p class="tracking-info">
+                  Você receberá um e-mail com o código de rastreamento assim que
+                  seu pedido for enviado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-info">
+            <h2 class="section-title">Informações de Pagamento</h2>
+
+            <div class="payment-details">
+              <div class="payment-method">
+                <h3>Método de Pagamento</h3>
+                <div class="card-info">
+                  <div class="card-icon">
+                    <i class="fab fa-cc-visa"></i>
+                  </div>
+                  <div class="card-details">
+                    <p>Cartão de Crédito Visa</p>
+                    <p>**** **** **** 1234</p>
+                    <p>3x de R$56,60 sem juros</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="billing-address">
+                <h3>Endereço de Cobrança</h3>
+                <p>Ana Silva</p>
+                <p>Rua das Flores, 123, Apto 101</p>
+                <p>Jardim Primavera</p>
+                <p>São Paulo - SP, 01234-567</p>
+                <p>Brasil</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="next-steps">
+            <h2 class="section-title">Próximos Passos</h2>
+
+            <div class="steps-container">
+              <div class="step">
+                <div class="step-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="step-content">
+                  <h3>Confirmação por E-mail</h3>
+                  <p>
+                    Enviamos um e-mail de confirmação para
+                    <strong>ana.silva@email.com</strong> com todos os detalhes
+                    do seu pedido.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-icon">
+                  <i class="fas fa-box"></i>
+                </div>
+                <div class="step-content">
+                  <h3>Processamento do Pedido</h3>
+                  <p>
+                    Seu pedido está sendo processado e será preparado para envio
+                    em até 24 horas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-icon">
+                  <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="step-content">
+                  <h3>Envio</h3>
+                  <p>
+                    Assim que seu pedido for enviado, você receberá um e-mail
+                    com o código de rastreamento.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div class="step-content">
+                  <h3>Entrega</h3>
+                  <p>
+                    Seu pedido será entregue no endereço informado entre os dias
+                    18/06/2023 e 20/06/2023.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="care-guide">
+            <div class="care-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="care-content">
+              <h3>Guia de Cuidados com suas Plantas</h3>
+              <p>
+                Preparamos um guia especial com dicas de cuidados para as
+                plantas que você adquiriu. Confira em seu e-mail ou acesse nossa
+                seção de guias para mais informações.
+              </p>
+              <a href="guias.html" class="btn-care-guide"
+                >Acessar Guias de Cuidados</a
+              >
+            </div>
+          </div>
+
+          <div class="confirmation-actions">
+            <a href="conta.html?section=orders" class="btn-view-orders"
+              >Ver Meus Pedidos</a
+            >
+            <a href="produtos.html" class="btn-continue-shopping"
+              >Continuar Comprando</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="recommended-products">
+      <div class="container">
+        <h2 class="section-title">Você Também Pode Gostar</h2>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="images/products/planta2.jpg"
+                alt="Espada de São Jorge"
+              />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="detalhe-produto.html?id=2">Espada de São Jorge</a>
+              </h3>
+              <div class="product-category">Planta de Interior</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">R$64,50</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="images/products/planta3.jpg"
+                alt="Suculenta Echeveria"
+              />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="detalhe-produto.html?id=3">Suculenta Echeveria</a>
+              </h3>
+              <div class="product-category">Suculenta</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">R$29,90</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="images/products/planta4.jpg" alt="Cacto Mandacaru" />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="detalhe-produto.html?id=4">Cacto Mandacaru</a>
+              </h3>
+              <div class="product-category">Cacto</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(3.5)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">R$39,90</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="images/products/planta5.jpg"
+                alt="Orquídea Phalaenopsis"
+              />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="detalhe-produto.html?id=5">Orquídea Phalaenopsis</a>
+              </h3>
+              <div class="product-category">Flor</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">R$96,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Inscreva-se em nossa Newsletter</h2>
+          <p>
+            Receba dicas de cuidados com plantas e ofertas exclusivas
+            diretamente no seu e-mail.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu endereço de e-mail" required />
+            <button type="submit">Inscrever-se</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>PlantaShop</h3>
+            <p>
+              Seu marketplace de plantas online com variedade, qualidade e
+              preços acessíveis.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categorias</h4>
+            <ul>
+              <li>
+                <a href="categorias.html?cat=interior">Plantas de Interior</a>
+              </li>
+              <li>
+                <a href="categorias.html?cat=exterior">Plantas de Exterior</a>
+              </li>
+              <li><a href="categorias.html?cat=suculentas">Suculentas</a></li>
+              <li>
+                <a href="categorias.html?cat=vasos">Vasos e Acessórios</a>
+              </li>
+              <li><a href="categorias.html?cat=sementes">Sementes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Av. das Plantas, 123 - São
+                Paulo
+              </li>
+              <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+              <li><i class="fas fa-envelope"></i> contato@plantashop.com.br</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 PlantaShop - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/confirmacao.js"></script>
+  </body>
+</html>

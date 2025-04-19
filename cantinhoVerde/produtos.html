@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos - PlantaShop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/produtos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Planta<span>Shop</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html" class="active">Produtos</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="conta.html"><i class="fas fa-user"></i></a>
+          <a href="pesquisa.html"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Nossos Produtos</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Início</a> / <span>Produtos</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="products-container">
+          <div class="filters">
+            <div class="filter-group">
+              <h3>Categorias</h3>
+              <ul>
+                <li><a href="#" class="active">Todas as Plantas</a></li>
+                <li><a href="#">Plantas de Interior</a></li>
+                <li><a href="#">Plantas de Exterior</a></li>
+                <li><a href="#">Suculentas</a></li>
+                <li><a href="#">Cactos</a></li>
+                <li><a href="#">Flores</a></li>
+                <li><a href="#">Vasos e Acessórios</a></li>
+              </ul>
+            </div>
+
+            <div class="filter-group">
+              <h3>Preço</h3>
+              <div class="price-range">
+                <input
+                  type="range"
+                  min="0"
+                  max="500"
+                  value="500"
+                  class="slider"
+                  id="priceRange"
+                />
+                <div class="price-values">
+                  <span>R$ 0</span>
+                  <span id="priceValue">R$ 500</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3>Tamanho</h3>
+              <div class="checkbox-group">
+                <label> <input type="checkbox" checked /> Pequeno </label>
+                <label> <input type="checkbox" checked /> Médio </label>
+                <label> <input type="checkbox" checked /> Grande </label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3>Nível de Cuidado</h3>
+              <div class="checkbox-group">
+                <label> <input type="checkbox" checked /> Fácil </label>
+                <label> <input type="checkbox" checked /> Médio </label>
+                <label> <input type="checkbox" checked /> Avançado </label>
+              </div>
+            </div>
+
+            <button class="btn filter-btn">Aplicar Filtros</button>
+          </div>
+
+          <div class="products-list">
+            <div class="products-header">
+              <div class="products-count">
+                <p>Mostrando 1-12 de 48 produtos</p>
+              </div>
+              <div class="products-sort">
+                <label for="sort">Ordenar por:</label>
+                <select id="sort">
+                  <option value="relevance">Relevância</option>
+                  <option value="price-low">Preço: Menor para Maior</option>
+                  <option value="price-high">Preço: Maior para Menor</option>
+                  <option value="newest">Mais Recentes</option>
+                  <option value="popular">Mais Populares</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <!-- Produto 1 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto1.jpg" alt="Zamioculca" />
+                  <div class="product-tag">Destaque</div>
+                </div>
+                <div class="product-info">
+                  <h3>Zamioculca</h3>
+                  <p class="product-description">
+                    Planta resistente ideal para ambientes internos
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 89,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 2 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto2.jpg" alt="Espada de São Jorge" />
+                </div>
+                <div class="product-info">
+                  <h3>Espada de São Jorge</h3>
+                  <p class="product-description">
+                    Planta purificadora de ar e de baixa manutenção
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 69,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 3 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto3.jpg" alt="Suculenta Echeveria" />
+                  <div class="product-tag">Novo</div>
+                </div>
+                <div class="product-info">
+                  <h3>Suculenta Echeveria</h3>
+                  <p class="product-description">
+                    Suculenta decorativa com roseta de folhas
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 29,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 4 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto4.jpg" alt="Costela de Adão" />
+                  <div class="product-tag">Popular</div>
+                </div>
+                <div class="product-info">
+                  <h3>Costela de Adão</h3>
+                  <p class="product-description">
+                    Planta tropical com folhas recortadas
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 119,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 5 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto5.jpg" alt="Cacto Mini" />
+                </div>
+                <div class="product-info">
+                  <h3>Cacto Mini</h3>
+                  <p class="product-description">
+                    Cacto pequeno ideal para decoração
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 19,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 6 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto6.jpg" alt="Samambaia" />
+                </div>
+                <div class="product-info">
+                  <h3>Samambaia</h3>
+                  <p class="product-description">
+                    Planta pendente com folhas delicadas
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 49,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 7 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto7.jpg" alt="Lírio da Paz" />
+                </div>
+                <div class="product-info">
+                  <h3>Lírio da Paz</h3>
+                  <p class="product-description">
+                    Planta com flores brancas elegantes
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 59,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 8 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto8.jpg" alt="Jiboia" />
+                </div>
+                <div class="product-info">
+                  <h3>Jiboia</h3>
+                  <p class="product-description">
+                    Planta trepadeira de fácil cultivo
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 39,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 9 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto9.jpg" alt="Orquídea Phalaenopsis" />
+                  <div class="product-tag">Premium</div>
+                </div>
+                <div class="product-info">
+                  <h3>Orquídea Phalaenopsis</h3>
+                  <p class="product-description">
+                    Orquídea com flores duradouras
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 129,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 10 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto10.jpg" alt="Vaso Cerâmica" />
+                </div>
+                <div class="product-info">
+                  <h3>Vaso Cerâmica</h3>
+                  <p class="product-description">Vaso decorativo em cerâmica</p>
+                  <div class="product-price">
+                    <span class="price">R$ 79,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 11 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto11.jpg" alt="Kit Jardinagem" />
+                </div>
+                <div class="product-info">
+                  <h3>Kit Jardinagem</h3>
+                  <p class="product-description">
+                    Kit com ferramentas essenciais
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 99,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+
+              <!-- Produto 12 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/produto12.jpg" alt="Substrato Premium" />
+                </div>
+                <div class="product-info">
+                  <h3>Substrato Premium</h3>
+                  <p class="product-description">
+                    Substrato especial para plantas
+                  </p>
+                  <div class="product-price">
+                    <span class="price">R$ 24,90</span>
+                  </div>
+                  <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagination">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#" class="next"
+                >Próximo <i class="fas fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>PlantaShop</h3>
+            <p>
+              Seu marketplace de plantas online com variedade, qualidade e
+              preços acessíveis.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categorias</h4>
+            <ul>
+              <li>
+                <a href="categorias.html?cat=interior">Plantas de Interior</a>
+              </li>
+              <li>
+                <a href="categorias.html?cat=exterior">Plantas de Exterior</a>
+              </li>
+              <li><a href="categorias.html?cat=suculentas">Suculentas</a></li>
+              <li>
+                <a href="categorias.html?cat=vasos">Vasos e Acessórios</a>
+              </li>
+              <li><a href="categorias.html?cat=sementes">Sementes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Av. das Plantas, 123 - São
+                Paulo
+              </li>
+              <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+              <li><i class="fas fa-envelope"></i> contato@plantashop.com.br</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 PlantaShop - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

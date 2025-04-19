@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultados da Pesquisa | Plantas Marketplace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pesquisa.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Planta<span>Shop</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="conta.html"><i class="fas fa-user"></i></a>
+          <a href="pesquisa.html"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section">
+      <div class="container">
+        <div class="search-results-container">
+          <!-- Search Header -->
+          <div class="search-header">
+            <h1 class="search-title">
+              Resultados da pesquisa para:
+              <span class="search-term">"suculenta"</span>
+            </h1>
+            <div class="search-stats">12 produtos encontrados</div>
+          </div>
+
+          <!-- Search Content -->
+          <div class="search-content">
+            <!-- Filters Sidebar -->
+            <div class="search-filters">
+              <div class="filter-header">
+                <h3>Filtros</h3>
+                <button class="clear-filters">Limpar Filtros</button>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Categorias</h4>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" checked />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Suculentas</span>
+                    <span class="option-count">(8)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Cactos</span>
+                    <span class="option-count">(3)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Plantas de Interior</span>
+                    <span class="option-count">(1)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Preço</h4>
+                <div class="price-range">
+                  <div class="range-slider">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value="100"
+                      class="slider"
+                      id="priceRange"
+                    />
+                  </div>
+                  <div class="range-values">
+                    <span>R$0</span>
+                    <span id="priceValue">R$100</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Tamanho</h4>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Pequeno</span>
+                    <span class="option-count">(5)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Médio</span>
+                    <span class="option-count">(4)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Grande</span>
+                    <span class="option-count">(3)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Nível de Cuidado</h4>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Fácil</span>
+                    <span class="option-count">(7)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Médio</span>
+                    <span class="option-count">(3)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label">Avançado</span>
+                    <span class="option-count">(2)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Avaliações</h4>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </span>
+                    <span class="option-count">(3)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="option-count">(4)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="option-count">(3)</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="option-label rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span class="option-count">(2)</span>
+                  </label>
+                </div>
+              </div>
+
+              <button class="apply-filters">Aplicar Filtros</button>
+            </div>
+
+            <!-- Results Grid -->
+            <div class="search-results">
+              <div class="results-header">
+                <div class="results-count">12 produtos encontrados</div>
+                <div class="results-sort">
+                  <label for="sortResults">Ordenar por:</label>
+                  <select id="sortResults">
+                    <option value="relevance">Relevância</option>
+                    <option value="price-low">Preço: Menor para Maior</option>
+                    <option value="price-high">Preço: Maior para Menor</option>
+                    <option value="name-asc">Nome: A-Z</option>
+                    <option value="name-desc">Nome: Z-A</option>
+                    <option value="rating">Avaliações</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="results-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img
+                      src="images/products/planta3.jpg"
+                      alt="Suculenta Echeveria"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=3"
+                        >Suculenta Echeveria</a
+                      >
+                    </h3>
+                    <div class="product-category">Suculenta</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span>(4.0)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">R$29,90</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                  <div class="product-badge sale">-15%</div>
+                  <div class="product-image">
+                    <img
+                      src="images/products/suculenta2.jpg"
+                      alt="Suculenta Sedum"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=10">Suculenta Sedum</a>
+                    </h3>
+                    <div class="product-category">Suculenta</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <span>(5.0)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="old-price">R$34,90</span>
+                      <span class="current-price">R$29,67</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img
+                      src="images/products/suculenta3.jpg"
+                      alt="Suculenta Haworthia"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=11"
+                        >Suculenta Haworthia</a
+                      >
+                    </h3>
+                    <div class="product-category">Suculenta</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <i class="far fa-star"></i>
+                      <span>(3.5)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">R$32,90</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                  <div class="product-badge new">Novo</div>
+                  <div class="product-image">
+                    <img
+                      src="images/products/suculenta4.jpg"
+                      alt="Suculenta Crassula"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=12"
+                        >Suculenta Crassula</a
+                      >
+                    </h3>
+                    <div class="product-category">Suculenta</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span>(4.0)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">R$27,90</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img
+                      src="images/products/suculenta5.jpg"
+                      alt="Suculenta Kalanchoe"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=13"
+                        >Suculenta Kalanchoe</a
+                      >
+                    </h3>
+                    <div class="product-category">Suculenta</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span>(4.5)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">R$36,90</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img
+                      src="images/products/suculenta6.jpg"
+                      alt="Suculenta Aeonium"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=14">Suculenta Aeonium</a>
+                    </h3>
+                    <div class="product-category">Suculenta</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span>(3.0)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">R$42,90</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                  <div class="product-badge sale">-20%</div>
+                  <div class="product-image">
+                    <img src="images/products/cacto1.jpg" alt="Cacto Opuntia" />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=15">Cacto Opuntia</a>
+                    </h3>
+                    <div class="product-category">Cacto</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span>(4.0)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="old-price">R$45,90</span>
+                      <span class="current-price">R$36,72</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img
+                      src="images/products/cacto2.jpg"
+                      alt="Cacto Mammillaria"
+                    />
+                    <div class="product-actions">
+                      <button class="quick-view">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="add-to-wishlist">
+                        <i class="far fa-heart"></i>
+                      </button>
+                      <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-name">
+                      <a href="detalhe-produto.html?id=16">Cacto Mammillaria</a>
+                    </h3>
+                    <div class="product-category">Cacto</div>
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <span>(5.0)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">R$33,90</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Produto 9 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/produto9.jpg" alt="Orquídea Phalaenopsis" />
+                    <div class="product-tag">Premium</div>
+                  </div>
+                  <div class="product-info">
+                    <h3>Orquídea Phalaenopsis</h3>
+                    <p class="product-description">
+                      Orquídea com flores duradouras
+                    </p>
+                    <div class="product-price">
+                      <span class="price">R$ 129,90</span>
+                    </div>
+                    <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Produto 10 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/produto10.jpg" alt="Vaso Cerâmica" />
+                  </div>
+                  <div class="product-info">
+                    <h3>Vaso Cerâmica</h3>
+                    <p class="product-description">
+                      Vaso decorativo em cerâmica
+                    </p>
+                    <div class="product-price">
+                      <span class="price">R$ 79,90</span>
+                    </div>
+                    <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Produto 11 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/produto11.jpg" alt="Kit Jardinagem" />
+                  </div>
+                  <div class="product-info">
+                    <h3>Kit Jardinagem</h3>
+                    <p class="product-description">
+                      Kit com ferramentas essenciais
+                    </p>
+                    <div class="product-price">
+                      <span class="price">R$ 99,90</span>
+                    </div>
+                    <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Produto 12 -->
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/produto12.jpg" alt="Substrato Premium" />
+                  </div>
+                  <div class="product-info">
+                    <h3>Substrato Premium</h3>
+                    <p class="product-description">
+                      Substrato especial para plantas
+                    </p>
+                    <div class="product-price">
+                      <span class="price">R$ 24,90</span>
+                    </div>
+                    <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <div class="pagination">
+                  <a href="#" class="active">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#" class="next"
+                    >Próximo <i class="fas fa-chevron-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>PlantaShop</h3>
+            <p>
+              Seu marketplace de plantas online com variedade, qualidade e
+              preços acessíveis.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categorias</h4>
+            <ul>
+              <li>
+                <a href="categorias.html?cat=interior">Plantas de Interior</a>
+              </li>
+              <li>
+                <a href="categorias.html?cat=exterior">Plantas de Exterior</a>
+              </li>
+              <li><a href="categorias.html?cat=suculentas">Suculentas</a></li>
+              <li>
+                <a href="categorias.html?cat=vasos">Vasos e Acessórios</a>
+              </li>
+              <li><a href="categorias.html?cat=sementes">Sementes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Av. das Plantas, 123 - São
+                Paulo
+              </li>
+              <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+              <li><i class="fas fa-envelope"></i> contato@plantashop.com.br</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 PlantaShop - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
