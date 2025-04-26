@@ -1,0 +1,275 @@
+/* Estilos para a página de Lista de Desejos */
+
+.page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+.page-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Estilos para lista vazia */
+.empty-wishlist {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.empty-wishlist-icon {
+  font-size: 60px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.empty-wishlist h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.empty-wishlist p {
+  color: #666;
+  margin-bottom: 25px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos para a lista de produtos */
+.wishlist-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.wishlist-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.wishlist-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.wishlist-item-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wishlist-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.wishlist-item:hover .wishlist-item-image img {
+  transform: scale(1.05);
+}
+
+.wishlist-item-content {
+  padding: 15px;
+}
+
+.wishlist-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.wishlist-item-category {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.wishlist-item-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.wishlist-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-item-actions .btn {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.remove-from-wishlist {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.remove-from-wishlist:hover {
+  color: #b71c1c;
+}
+
+/* Estilos para o ícone de desejos na navbar */
+.wishlist {
+  position: relative;
+  margin-right: 15px;
+}
+
+.wishlist a {
+  color: #333;
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.wishlist a.active {
+  color: #2e7d32;
+}
+
+.wishlist-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para o usuário logado/não logado */
+.user-account {
+  margin-right: 15px;
+}
+
+.user-account a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.user-account a:hover {
+  color: #2e7d32;
+}
+
+.user-account i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.user-account .user-name {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-dropdown {
+  position: relative;
+}
+
+.user-dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 180px;
+  z-index: 100;
+  display: none;
+}
+
+.user-dropdown-menu.show {
+  display: block;
+}
+
+.user-dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.user-dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.user-dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.user-dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .wishlist-products {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+  }
+
+  .user-account .user-name {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .wishlist-products {
+    grid-template-columns: 1fr;
+  }
+
+  .empty-wishlist {
+    padding: 40px 15px;
+  }
+
+  .empty-wishlist-icon {
+    font-size: 50px;
+  }
+
+  .empty-wishlist h2 {
+    font-size: 20px;
+  }
+}

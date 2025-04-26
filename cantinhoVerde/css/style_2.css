@@ -1,0 +1,107 @@
+/* Adicione este código ao seu arquivo style.css existente */
+
+/* Estilos para o botão de adicionar à lista de desejos no card do produto */
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.add-to-wishlist {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  padding: 5px;
+}
+
+.add-to-wishlist:hover {
+  color: #d32f2f;
+}
+
+.add-to-wishlist.active {
+  color: #d32f2f;
+}
+
+.add-to-cart {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.add-to-cart:hover {
+  background-color: #1b5e20;
+}
+
+.add-to-cart i {
+  margin-right: 5px;
+}
+
+/* Estilos para notificações */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilos para o ícone de desejos na navbar */
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.wishlist {
+  position: relative;
+  margin-right: 15px;
+}
+
+.wishlist a {
+  color: #333;
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.wishlist a:hover,
+.wishlist a.active {
+  color: #2e7d32;
+}
+
+.wishlist-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

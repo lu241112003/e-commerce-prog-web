@@ -1,0 +1,138 @@
+📦 Modelagem de Banco de Dados - Sistema de E-commerce
+O modelo de dados apresentado representa a estrutura de um sistema de e-commerce, com foco em gerenciamento de usuários, produtos, pedidos, pagamentos e demais recursos essenciais para uma loja virtual. Abaixo, descrevemos as entidades, seus principais atributos e os relacionamentos entre elas.
+
+👤 Entidade: usuarios
+Armazena os dados dos usuários da plataforma.
+
+Atributos: id, nome, sobrenome, email, senha, telefone, data_nascimento, tipo
+
+Observações:
+
+O campo tipo diferencia entre clientes e administradores.
+
+O email é único.
+
+🏠 Entidade: enderecos
+Contém os endereços vinculados a um usuário.
+
+Atributos: id, usuario_id, tipo, cep, logradouro, numero, complemento, bairro, cidade, estado
+
+Relacionamento: Muitos endereços para um usuário (usuario_id → usuarios.id)
+
+Regra: Um endereço pode ser de entrega, cobrança ou ambos.
+
+🗂️ Entidade: categorias
+Representa as categorias dos produtos.
+
+Atributos: id, nome, descricao, imagem, status
+
+🌿 Entidade: produtos
+Armazena os produtos disponíveis na loja.
+
+Atributos: id, nome, descricao, preco, quantidade_estoque, peso, dimensoes, nivel_cuidado, tamanho, ambiente, luz, agua, ativo, data_cadastro, data_atualizacao
+
+Observações: O produto pode ter diversos atributos específicos relacionados a cuidados, ambiente, luz e água, reforçando a ideia de que o sistema é voltado a plantas ou itens de jardinagem.
+
+🖼️ Entidade: produto_imagens
+Armazena as imagens associadas a produtos.
+
+Atributos: id, produto_id, url
+
+Relacionamento: Muitos para um produto (produto_id → produtos.id)
+
+🔗 Entidade: produto_categoria
+Relacionamento N:N entre produtos e categorias.
+
+Atributos: produto_id, categoria_id
+
+Relacionamento: Produto pode pertencer a várias categorias e vice-versa.
+
+🛒 Entidade: carrinhos
+Representa o carrinho de compras de um usuário.
+
+Atributos: id, usuario_id, data_criacao, data_atualizacao
+
+Relacionamento: Um carrinho por usuário (pode ser nulo se anônimo).
+
+🧾 Entidade: carrinho_itens
+Itens adicionados ao carrinho.
+
+Atributos: id, carrinho_id, produto_id, quantidade, preco_unitario
+
+Relacionamentos:
+
+Muitos itens para um carrinho
+
+Cada item refere-se a um produto
+
+❤️ Entidade: lista_desejos
+Armazena os produtos que o usuário deseja futuramente.
+
+Atributos: id, usuario_id, produto_id, data_adicao
+
+Relacionamentos:
+
+Um usuário pode ter vários produtos na lista de desejos
+
+Cada produto pode estar na lista de vários usuários
+
+Regra: A combinação usuario_id + produto_id é única.
+
+📦 Entidade: pedidos
+Representa os pedidos feitos por usuários.
+
+Atributos: id, usuario_id, endereco_entrega_id, codigo, subtotal, total, status, metodo_pagamento, codigo_rastreio, data_pedido, data_atualizacao
+
+Relacionamentos:
+
+Um pedido está ligado a um usuário e a um endereço de entrega.
+
+📋 Entidade: pedido_itens
+Itens contidos em cada pedido.
+
+Atributos: id, pedido_id, produto_id, quantidade, preco_unitario, subtotal
+
+Relacionamentos: Muitos itens para um pedido, cada item refere-se a um produto.
+
+📈 Entidade: pedido_status_historico
+Mantém o histórico de status dos pedidos.
+
+Atributos: id, pedido_id, status, comentario, data_alteracao
+
+Relacionamento: Um histórico por status de um pedido.
+
+💳 Entidade: pagamentos
+Armazena os dados dos pagamentos.
+
+Atributos: id, pedido_id, metodo, status, valor, codigo_transacao, data_pagamento, data_atualizacao
+
+Relacionamento: Cada pagamento está vinculado a um pedido.
+
+🔄 Resumo dos Relacionamentos
+Usuário pode ter:
+
+Vários endereços
+
+Um carrinho
+
+Vários pedidos
+
+Uma lista de desejos com vários produtos
+
+Produto pode:
+
+Ter várias imagens
+
+Estar em várias categorias
+
+Estar em carrinhos, pedidos e listas de desejos
+
+Pedido:
+
+Tem um ou mais itens
+
+Tem um endereço de entrega
+
+Pode ter vários status históricos
+
+Está ligado a um pagamento
