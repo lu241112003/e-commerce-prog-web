@@ -1,3 +1,9 @@
+<!-- <?php
+      echo '<pre>';
+      print_r($produtos);
+      echo '</pre>';
+      ?> -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,9 +13,7 @@
   <title><?= APP_NAME ?></title>
   <link rel="stylesheet" href="<?= BASE_URL ?>/css/style.css" />
   <link rel="stylesheet" href="<?= BASE_URL ?>/css/produtos.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
@@ -28,140 +32,202 @@
     <div class="container">
       <div class="products-container">
         <div class="filters">
-          <div class="filter-group">
-            <h3>Categorias</h3>
-            <ul>
-              <li><a href="#" class="active">Todas as Plantas</a></li>
-              <li><a href="#">Plantas de Interior</a></li>
-              <li><a href="#">Plantas de Exterior</a></li>
-              <li><a href="#">Suculentas</a></li>
-              <li><a href="#">Cactos</a></li>
-              <li><a href="#">Flores</a></li>
-              <li><a href="#">Vasos e Acessórios</a></li>
-            </ul>
-          </div>
+          <form method="get" id="filters-form">
+            <!-- Filtro de Categorias -->
+            <div class="filter-group">
+              <h3>Categorias</h3>
+              <ul>
+                <li><a href="?<?= $this->getQueryString(['categoria', 'pagina']) ?>"
+                    class="<?= empty($filtros['categoria_id']) ? 'active' : '' ?>">Todas as Plantas</a></li>
+                <?php foreach ($categorias as $categoria): ?>
+                  <li>
+                    <a href="?categoria=<?= $categoria['id'] ?>&<?= $this->getQueryString(['categoria', 'pagina']) ?>"
+                      class="<?= ($filtros['categoria_id'] ?? '') == $categoria['id'] ? 'active' : '' ?>">
+                      <?= htmlspecialchars($categoria['nome']) ?>
+                    </a>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
 
-          <div class="filter-group">
-            <h3>Preço</h3>
-            <div class="price-range">
-              <input
-                type="range"
-                min="0"
-                max="500"
-                value="500"
-                class="slider"
-                id="priceRange" />
-              <div class="price-values">
-                <span>R$ 0</span>
-                <span id="priceValue">R$ 500</span>
+            <!-- Filtro de Preço -->
+            <div class="filter-group">
+              <h3>Preço</h3>
+              <div class="price-range">
+                <input type="range" min="0" max="500" value="<?= $filtros['preco_max'] ?? 500 ?>"
+                  class="slider" id="priceRange" name="preco_max">
+                <div class="price-values">
+                  <span>R$ 0</span>
+                  <span id="priceValue">R$ <?= $filtros['preco_max'] ?? 500 ?></span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="filter-group">
-            <h3>Tamanho</h3>
-            <div class="checkbox-group">
-              <label> <input type="checkbox" checked /> Pequeno </label>
-              <label> <input type="checkbox" checked /> Médio </label>
-              <label> <input type="checkbox" checked /> Grande </label>
+            <!-- Filtro de Tamanho -->
+            <div class="filter-group">
+              <h3>Tamanho</h3>
+              <div class="checkbox-group">
+                <?php
+                $tamanhos = ['pequeno', 'medio', 'grande'];
+                foreach ($tamanhos as $tamanho):
+                  $checked = in_array(strtolower($tamanho), $filtros['tamanhos'] ?? []) ? 'checked' : '';
+                ?>
+                  <label>
+                    <input type="checkbox" name="tamanhos[]" value="<?= strtolower($tamanho) ?>" <?= $checked ?>>
+                    <?= $tamanho ?>
+                  </label>
+                <?php endforeach; ?>
+              </div>
             </div>
-          </div>
 
-          <div class="filter-group">
-            <h3>Nível de Cuidado</h3>
-            <div class="checkbox-group">
-              <label> <input type="checkbox" checked /> Fácil </label>
-              <label> <input type="checkbox" checked /> Médio </label>
-              <label> <input type="checkbox" checked /> Avançado </label>
+            <!-- Filtro de Nível de Cuidado -->
+            <div class="filter-group no-margin">
+              <h3>Nível de Cuidado</h3>
+              <div class="checkbox-group">
+                <?php
+                $niveis = ['facil', 'medio', 'avancado'];
+                foreach ($niveis as $nivel):
+                  $checked = in_array(strtolower($nivel), $filtros['niveis'] ?? []) ? 'checked' : '';
+                ?>
+                  <label>
+                    <input type="checkbox" name="niveis[]" value="<?= strtolower($nivel) ?>" <?= $checked ?>>
+                    <?= $nivel ?>
+                  </label>
+                <?php endforeach; ?>
+              </div>
             </div>
-          </div>
 
-          <button class="btn filter-btn">Aplicar Filtros</button>
+            <input type="hidden" name="pagina" value="1">
+            <button type="submit" class="btn filter-btn">Aplicar Filtros</button>
+          </form>
         </div>
 
         <div class="products-list">
           <div class="products-header">
             <div class="products-count">
-              <p>Mostrando 1-12 de 48 produtos</p>
+              <?php if (!empty($produtos)): ?>
+                <?php
+                $inicio = (($paginaAtual - 1) * $itensPorPagina) + 1;
+                $fim = min($paginaAtual * $itensPorPagina, $totalProdutos);
+                ?>
+                <p>Mostrando <?= $inicio ?>-<?= $fim ?> de <?= $totalProdutos ?> produtos</p>
+              <?php else: ?>
+                <p>Nenhum produto encontrado</p>
+              <?php endif; ?>
             </div>
+
             <div class="products-sort">
-              <label for="sort">Ordenar por:</label>
-              <select id="sort">
-                <option value="relevance">Relevância</option>
-                <option value="price-low">Preço: Menor para Maior</option>
-                <option value="price-high">Preço: Maior para Menor</option>
-                <option value="newest">Mais Recentes</option>
-                <option value="popular">Mais Populares</option>
-              </select>
+              <form method="get" id="sort-form" class="sort-form">
+                <label for="sort">Ordenar por:</label>
+                <select id="sort" name="ordenar" onchange="this.form.submit()">
+                  <option value="relevance">Relevância</option>
+                  <option value="price-low" <?= ($filtros['ordenacao'] ?? '') === 'price-low' ? 'selected' : '' ?>>Preço: Menor para Maior</option>
+                  <option value="price-high" <?= ($filtros['ordenacao'] ?? '') === 'price-high' ? 'selected' : '' ?>>Preço: Maior para Menor</option>
+                  <option value="newest" <?= ($filtros['ordenacao'] ?? '') === 'newest' ? 'selected' : '' ?>>Mais Recentes</option>
+                  <option value="popular" <?= ($filtros['ordenacao'] ?? '') === 'popular' ? 'selected' : '' ?>>Mais Populares</option>
+                </select>
+
+                <!-- Manter outros parâmetros GET -->
+                <input type="hidden" name="pagina" value="1">
+                <?php if (!empty($filtros['categoria_id'])): ?>
+                  <input type="hidden" name="categoria" value="<?= htmlspecialchars($filtros['categoria_id']) ?>">
+                <?php endif; ?>
+                <?php if (!empty($filtros['preco_max'])): ?>
+                  <input type="hidden" name="preco_max" value="<?= htmlspecialchars($filtros['preco_max']) ?>">
+                <?php endif; ?>
+              </form>
             </div>
           </div>
 
           <div class="product-grid">
-            <!-- Produto 1 -->
-            <div class="product-card">
-              <div class="product-image">
-                <img src="img/produto1.jpg" alt="Zamioculca" />
-                <div class="product-tag">Destaque</div>
-              </div>
-              <div class="product-info">
-                <h3>Zamioculca</h3>
-                <p class="product-description">
-                  Planta resistente ideal para ambientes internos
-                </p>
-                <div class="product-price">
-                  <span class="price">R$ 89,90</span>
-                </div>
-                <button class="btn-add-cart">Adicionar ao Carrinho</button>
-              </div>
-            </div>
+            <?php if (!empty($produtos)): ?>
+              <?php foreach ($produtos as $produto): ?>
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="<?= htmlspecialchars($produto['imagem_principal'] ?? BASE_URL . '/img/sem-imagem.jpg') ?>"
+                      alt="<?= htmlspecialchars($produto['nome']) ?>" />
 
+                    <?php /* if ($produto['novo'] == 1): ?>
+                          <div class="product-tag">Novo</div>
+                         <?php endif; */ ?>
 
-            <div class="product-card" data-id="1">
-              <div class="product-image">
-                <img src="images/produtos/planta1.jpg" alt="Nome da Planta" />
-                <div class="product-tags">
-                  <span class="tag tag-new">Novo</span>
+                    <?php if ($produto['destaque'] == 1): ?>
+                      <div class="product-tag">Destaque</div>
+                    <?php endif; ?>
+                  </div>
+                  <div class="product-info">
+                    <h3><?= htmlspecialchars($produto['nome']) ?></h3>
+                    <p class="product-description">
+                      <?= htmlspecialchars($produto['descricao_curta']) ?>
+                    </p>
+                    <div class="product-price">
+                      <?php if (!empty($produto['preco_promocional']) && $produto['preco_promocional'] < $produto['preco']): ?>
+                        <span class="price">R$ <?= number_format($produto['preco_promocional'], 2, ',', '.') ?></span>
+                      <?php else: ?>
+                        <span class="price">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
+                      <?php endif; ?>
+                    </div>
+                    <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                  </div>
                 </div>
-              </div>
-              <div class="product-content">
-                <h3 class="product-title">Nome da Planta</h3>
-                <div class="product-category">Plantas de Interior</div>
-                <div class="product-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                  <span>(4.5)</span>
-                </div>
-                <div class="product-price">R$ 59,90</div>
-                <div class="product-actions">
-                  <button class="add-to-cart" data-id="1">
-                    <i class="fas fa-shopping-cart"></i> Adicionar
-                  </button>
-                  <button
-                    class="add-to-wishlist"
-                    data-id="1"
-                    title="Adicionar à lista de desejos">
-                    <i class="far fa-heart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <?php if (
+                !empty($filtros['categoria_id']) || !empty($filtros['preco_max']) ||
+                !empty($filtros['tamanhos']) || !empty($filtros['niveis'])
+              ): ?>
+                <p class="no-products">Nenhum produto encontrado com os filtros selecionados.</p>
+              <?php else: ?>
+                <p class="no-products">Nenhum produto encontrado.</p>
+              <?php endif; ?>
+            <?php endif; ?>
           </div>
 
-          <div class="pagination">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#" class="next">Próximo <i class="fas fa-chevron-right"></i></a>
-          </div>
+          <?php if ($totalPaginas > 1): ?>
+            <div class="pagination">
+              <?php if ($paginaAtual > 1): ?>
+                <a href="?pagina=<?= $paginaAtual - 1 ?><?= $this->getQueryString(['pagina']) ?>">
+                  <i class="fas fa-chevron-left"></i> Anterior
+                </a>
+              <?php endif; ?>
+
+              <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
+                <a href="?pagina=<?= $i ?><?= $this->getQueryString(['pagina']) ?>"
+                  class="<?= $i == $paginaAtual ? 'active' : '' ?>">
+                  <?= $i ?>
+                </a>
+              <?php endfor; ?>
+
+              <?php if ($paginaAtual < $totalPaginas): ?>
+                <a href="?pagina=<?= $paginaAtual + 1 ?><?= $this->getQueryString(['pagina']) ?>">
+                  Próximo <i class="fas fa-chevron-right"></i>
+                </a>
+              <?php endif; ?>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
+    </div>
   </section>
 
   <?php require_once 'partials/footer.php'; ?>
+
+  <script>
+    // Atualiza o valor exibido do range de preço
+    document.getElementById('priceRange').addEventListener('input', function() {
+      document.getElementById('priceValue').textContent = 'R$ ' + this.value;
+    });
+
+    // Remove o submit automático e mantém apenas a atualização visual
+    document.getElementById('priceRange').addEventListener('change', function() {
+      document.getElementById('priceValue').textContent = 'R$ ' + this.value;
+    });
+
+    // Remove o submit automático dos checkboxes
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {});
+    });
+  </script>
 </body>
 
 </html>

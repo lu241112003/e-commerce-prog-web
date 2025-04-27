@@ -18,4 +18,21 @@ class Controller
         extract($data);
         require_once $viewFile;
     }
+
+    protected function getQueryString($exclude = [])
+    {
+        $query = [];
+        foreach ($_GET as $key => $value) {
+            if (!in_array($key, $exclude)) {
+                if (is_array($value)) {
+                    foreach ($value as $item) {
+                        $query[] = $key . '[]=' . urlencode($item);
+                    }
+                } else {
+                    $query[] = $key . '=' . urlencode($value);
+                }
+            }
+        }
+        return $query ? '&' . implode('&', $query) : '';
+    }
 }

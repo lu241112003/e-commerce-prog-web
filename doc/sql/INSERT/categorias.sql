@@ -1,4 +1,4 @@
--- 1. Categoria principal: Plantas de Interior (com destaque TRUE)
+-- 1. Categoria principal: Plantas de Interior 
 INSERT INTO categorias (nome, descricao, slug, imagem, destaque, status)
 VALUES (
   'Plantas de Interior',
@@ -9,7 +9,7 @@ VALUES (
   'ativo'
 );
 
--- 2. Subcategoria: Suculentas (associada à "Plantas de Interior" via categoria_pai_id, com destaque TRUE)
+-- 2. Subcategoria: Suculentas
 INSERT INTO categorias (nome, descricao, slug, imagem, categoria_pai_id, destaque, status)
 VALUES (
   'Suculentas',
@@ -21,7 +21,7 @@ VALUES (
   'ativo'
 );
 
--- 3. Categoria principal: Plantas para Jardim (com destaque TRUE)
+-- 3. Categoria principal: Plantas para Jardim 
 INSERT INTO categorias (nome, descricao, slug, imagem, destaque, status)
 VALUES (
   'Plantas para Jardim',
@@ -32,7 +32,7 @@ VALUES (
   'ativo'
 );
 
--- 4. Categoria principal: Vasos e Acessórios (com destaque TRUE)
+-- 4. Categoria principal: Vasos e Acessórios 
 INSERT INTO categorias (nome, descricao, slug, imagem, destaque, status)
 VALUES (
   'Vasos e Acessórios',

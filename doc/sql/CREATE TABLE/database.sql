@@ -80,9 +80,9 @@ CREATE TABLE produtos (
     novo BOOLEAN DEFAULT FALSE,
     status ENUM('ativo', 'inativo', 'esgotado') DEFAULT 'ativo',
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    data_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    fornecedor_id INT,
-    FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id) ON DELETE SET NULL
+    data_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    -- fornecedor_id INT,
+    -- FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id) ON DELETE SET NULL
 );
 
 -- Tabela de Relacionamento Produto-Categoria

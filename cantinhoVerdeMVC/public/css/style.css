@@ -246,6 +246,7 @@ nav ul li a.active::after {
   gap: 30px;
 }
 
+/* Produto */
 .product-card {
   background-color: var(--white);
   border-radius: 8px;
