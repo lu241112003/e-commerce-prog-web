@@ -19,19 +19,19 @@
         <ul>
           <li><a href="<?= BASE_URL ?>/home">Início</a></li>
           <li><a href="<?= BASE_URL ?>/produtos">Produtos</a></li>
+          <li><a href="<?= BASE_URL ?>/categorias">Categorias</a></li>
           <li><a href="<?= BASE_URL ?>/sobre">Sobre Nós</a></li>
-          <li><a href="<?= BASE_URL ?>/blog">Blog</a></li>
           <li><a href="<?= BASE_URL ?>/contato">Contato</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Categorias</h4>
         <ul>
-          <li><a href="<?= BASE_URL ?>/categorias?cat=interior">Plantas de Interior</a></li>
-          <li><a href="<?= BASE_URL ?>/categorias?cat=exterior">Plantas de Exterior</a></li>
-          <li><a href="<?= BASE_URL ?>/categorias?cat=suculentas">Suculentas</a></li>
-          <li><a href="<?= BASE_URL ?>/categorias?cat=vasos">Vasos e Acessórios</a></li>
-          <li><a href="<?= BASE_URL ?>/categorias?cat=sementes">Sementes</a></li>
+          <li><a href="<?= BASE_URL ?>/produtos?categoria=1&&url=produtos">Plantas de Interior</a></li>
+          <li><a href="<?= BASE_URL ?>/">Plantas de Exterior</a></li>
+          <li><a href="<?= BASE_URL ?>/produtos?categoria=2&&url=produtos">Suculentas</a></li>
+          <li><a href="<?= BASE_URL ?>/produtos?categoria=4&&url=produtos">Vasos e Acessórios</a></li>
+          <li><a href="<?= BASE_URL ?>/">Sementes</a></li>
         </ul>
       </div>
       <div class="footer-col">
