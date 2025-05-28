@@ -475,3 +475,6 @@
 </body>
 
 </html>
+
+
+  <!-- Newsletter Section -->
