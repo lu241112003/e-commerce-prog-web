@@ -315,3 +315,5 @@ CREATE INDEX idx_pedidos_cliente ON pedidos(cliente_id);
 CREATE INDEX idx_pedidos_status ON pedidos(status);
 CREATE INDEX idx_avaliacoes_produto ON avaliacoes(produto_id);
 CREATE INDEX idx_avaliacoes_status ON avaliacoes(status);
+
+-- teste
